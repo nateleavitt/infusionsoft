@@ -1,7 +1,7 @@
 This is a basic Ruby wrapper for Rails I have written for the Infusionsoft API.  Right now, it is pretty basic but will work :)  I have plans to add more features, but for now this should suffice.
 
 h2. Installation
-* Run @ruby script/plugin install git@github.com:nateleavitt/api_infusionsoft.git@
+* Run @ruby script/plugin install git://github.com/nateleavitt/api_infusionsoft.git@
 * Create an initializer called api_infusionsoft.rb in config/initializers
 * Include this code in the initializer @AInfusionsoftApiConnection.new("https://your_app.infusionsoft.com", "YOUR API KEY")@
 * Put this code @include ApiInfusionsoft@ in any object that you want to have access to the API calls
