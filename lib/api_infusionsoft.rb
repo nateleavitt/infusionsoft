@@ -384,7 +384,7 @@ module ApiInfusionsoft
   ###  File Service  ###
   ########################
   
-  def api_file_upload(contact_id=nil, file_name, encoded_file_base64)
+  def api_file_upload(contact_id, file_name, encoded_file_base64)
     Thread.current[:api_conn].api_perform('FileService', 'uploadFile', contact_id, file_name, encoded_file_base64)
   end
   
