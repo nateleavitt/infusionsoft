@@ -55,7 +55,7 @@ module ApiInfusionsoft
   # content_type can be Text, HTML, Multipart
   # merge_context can be Contact, ServiceCall, Opportunity, CreditCard
   def api_email_add(title, categories, from, to, cc, bcc, subject, text_body, html_body, content_type, merge_context)
-    Thread.current[:api_conn].api_perform('APIEmailService', 'addEmailTemplate', title, categories, from, to, cc, bcc, subject, text_body, html_body, content_type)
+    Thread.current[:api_conn].api_perform('APIEmailService', 'addEmailTemplate', title, categories, from, to, cc, bcc, subject, text_body, html_body, content_type, merge_context)
   end
 
   def api_email_attach(contact_id, from_name, from_address, to_address, cc_addresses, bcc_addresses, content_type, subject, html_body, txt_body, header, receive_date, send_date)
