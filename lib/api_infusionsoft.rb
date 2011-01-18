@@ -16,8 +16,14 @@ def api_perform(class_type, method, *args)
     puts "*** Infusion Error: #{e.faultCode} - #{e.faultString} ***"
   end
 
+  retry_call(class_type, method, *args) unless result # Infusionsoft API drops
   return result
 end
+
+def retry_call(class_type, method, *args)
+  api_perform(class_type, method, *args)
+end
+
 end
 
 module ApiInfusionsoft
