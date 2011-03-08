@@ -111,6 +111,11 @@ module ApiInfusionsoft
   ### Contact Service  ###
   ########################
 
+  def api_contact_find_by_email(email, selected_fields)
+    # Finds all contacts with the supplied email address in any of the three contact record email addresses
+    Thread.current[:api_conn].api_perform('ContactService', 'findByEmail', email, selected_fields)
+  end
+
   def api_contact_add(data)
     # Adds a contact to the database
     @contact_id = Thread.current[:api_conn].api_perform('ContactService', 'add', data)
