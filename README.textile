@@ -8,4 +8,4 @@ h2. Installation
 
 From there you should be good to go.
 
-Copyright (c) 2010 Infused Systems
+Copyright (c) 2011 Infused Systems
