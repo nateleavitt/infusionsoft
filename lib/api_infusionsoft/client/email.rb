@@ -3,7 +3,7 @@ module ApiInfusionsoft
     ########################
     ###  Email Service   ###
     ########################
-    module EmailService
+    module Email
       # Enables you to opt contacts in
       def api_email_optin(email, reason)
         response = get('APIEmailService', 'optIn', email, reason)

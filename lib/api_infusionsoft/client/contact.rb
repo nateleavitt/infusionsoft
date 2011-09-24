@@ -3,8 +3,7 @@ module ApiInfusionsoft
     ########################  
     ### Contact Service  ###
     ########################
-    module ContactService
-
+    module Contact
       # Finds all contacts with the supplied email address in any of the three contact record email addresses
       def api_contact_find_by_email(email, selected_fields)
         response = get('ContactService.findByEmail', email, selected_fields)
