@@ -1,7 +1,7 @@
 module ApiInfusionsoft
 
   module Configuration
-    VALID_OPTION_KEYS = [
+    VALID_OPTIONS_KEYS = [
       :api_url,
       :api_key
     ]
