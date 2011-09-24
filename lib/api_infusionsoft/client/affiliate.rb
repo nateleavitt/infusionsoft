@@ -3,7 +3,7 @@ module ApiInfusionsoft
     ########################  
     ### Affiliate Service ##
     ########################
-    module AffiliateService
+    module Affiliate
       # return all claw backs in a date range
       def api_affiliate_clawbacks(affiliate_id, start_date, end_date)
         response = get('APIAffiliateService', 'affClawbacks', affiliate_id, start_date, end_date)

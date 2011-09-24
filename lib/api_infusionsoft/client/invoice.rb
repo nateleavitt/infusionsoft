@@ -3,7 +3,7 @@ module ApiInfusionsoft
     ########################  
     ### Invoice Service  ###
     ########################
-    module InvoiceService
+    module Invoice
       def update_recurring_next_bill_date(job_recurring_id, new_bill_date) 
         response = get('InvoiceService', 'updateJobRecurringNextBillDate', job_recurring_id, new_bill_date)
       end

@@ -3,7 +3,7 @@ module ApiInfusionsoft
     ########################
     ###  File Service  ###
     ########################
-    module FileService
+    module File
       def api_file_upload(contact_id, file_name, encoded_file_base64)
         response = get('FileService', 'uploadFile', contact_id, file_name, encoded_file_base64)
       end
