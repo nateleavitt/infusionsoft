@@ -7,20 +7,20 @@ module ApiInfusionsoft
     # Require client method modules after initializing the Client class in
     # order to avoid a superclass mismatch error, allowing those modules to be
     # Client-namespaced.
-    require 'api_infusiosnoft/client/contact'
-    require 'api_infusiosnoft/client/email'
-    require 'api_infusiosnoft/client/invoice'
-    require 'api_infusiosnoft/client/data'
-    require 'api_infusiosnoft/client/affiliate'
-    require 'api_infusiosnoft/client/file'
-    require 'api_infusiosnoft/client/ticket'
+    require 'api_infusionsoft/client/contact'
+    require 'api_infusionsoft/client/email'
+    require 'api_infusionsoft/client/invoice'
+    require 'api_infusionsoft/client/data'
+    require 'api_infusionsoft/client/affiliate'
+    require 'api_infusionsoft/client/file'
+    require 'api_infusionsoft/client/ticket'
 
-    include ApiInfusionosft::Client::Contact
-    include ApiInfusionosft::Client::Email
-    include ApiInfusionosft::Client::Invoice
-    include ApiInfusionosft::Client::Data
-    include ApiInfusionosft::Client::Affiliate
-    include ApiInfusionosft::Client::File
-    include ApiInfusionosft::Client::Ticket
+    include ApiInfusionsoft::Client::Contact
+    include ApiInfusionsoft::Client::Email
+    include ApiInfusionsoft::Client::Invoice
+    include ApiInfusionsoft::Client::Data
+    include ApiInfusionsoft::Client::Affiliate
+    include ApiInfusionsoft::Client::File
+    include ApiInfusionsoft::Client::Ticket
   end
 end
