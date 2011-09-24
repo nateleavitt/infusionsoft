@@ -1,13 +1,13 @@
 module ApiInfusionsoft
 
   module Configuration
-    VALID_OPTIONS_KEYS = [
+    VALID_OPTION_KEYS = [
       :api_url,
       :api_key
     ]
 
     # @private
-    attr_accessor *VALID_OPTIONS_KEYS
+    attr_accessor *VALID_OPTION_KEYS
 
     # When this module is extended, set all configuration options to their default values
     #def self.extended(base)
@@ -22,7 +22,7 @@ module ApiInfusionsoft
     # Create a hash of options and their values
     def options
       options = {}
-      VALID_OPTIONS_KEYS.each{|k| options[k] = send(k)}
+      VALID_OPTION_KEYS.each{|k| options[k] = send(k)}
       options
     end
 

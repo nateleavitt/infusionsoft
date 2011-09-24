@@ -10,7 +10,7 @@ module ApiInfusionsoft
 
     def initialize(options={})
       options = ApiInfusionsoft.options.merge(options)
-      Configuration::VALID_OPTIONS_KEYS.each do |key|
+      Configuration::VALID_OPTION_KEYS.each do |key|
         send("#{key}=", options[key])
       end
     end
