@@ -5,8 +5,13 @@ module ApiInfusionsoft
     private
 
     def connection(service_call, method, *args)
-      server = XMLRPC::Client.new3({'host' => api_url, 'path' => "/api/xmlrpc", 'port' => 443, 'use_ssl' => true})
-      result = server.call("#{service_call}", api_key, *params)
+      server = XMLRPC::Client.new3({
+        'host' => api_url, 
+        'path' => "/api/xmlrpc", 
+        'port' => 443, 
+        'use_ssl' => true
+      })
+      result = server.call("#{service_call}", api_key, *args)
       return result
     end
 
