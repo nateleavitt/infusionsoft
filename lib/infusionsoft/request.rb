@@ -1,4 +1,4 @@
-module ApiInfusionsoft
+module Infusionsoft
   module Request
     # Perform an GET request
     def get(service_call, *args)

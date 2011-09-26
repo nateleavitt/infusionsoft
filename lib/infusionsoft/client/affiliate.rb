@@ -1,4 +1,4 @@
-module ApiInfusionsoft
+module Infusionsoft
   class Client
     ########################  
     ### Affiliate Service ##

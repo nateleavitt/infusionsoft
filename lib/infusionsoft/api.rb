@@ -1,8 +1,8 @@
-require 'api_infusionsoft/configuration'
-require 'api_infusionsoft/connection'
-require 'api_infusionsoft/request'
+require 'infusionsoft/configuration'
+require 'infusionsoft/connection'
+require 'infusionsoft/request'
 
-module ApiInfusionsoft
+module Infusionsoft
 
   class Api
     include Connection
@@ -11,7 +11,7 @@ module ApiInfusionsoft
     attr_accessor *Configuration::VALID_OPTION_KEYS
 
     def initialize(options={})
-      options = ApiInfusionsoft.options.merge(options)
+      options = Infusionsoft.options.merge(options)
       Configuration::VALID_OPTION_KEYS.each do |key|
         send("#{key}=", options[key])
       end

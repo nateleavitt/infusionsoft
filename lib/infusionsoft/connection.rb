@@ -1,6 +1,6 @@
 require "xmlrpc/client"
 
-module ApiInfusionsoft
+module Infusionsoft
   module Connection
     private
 
