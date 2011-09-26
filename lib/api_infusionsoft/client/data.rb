@@ -21,7 +21,6 @@ module ApiInfusionsoft
 
       def data_load(table, id, selected_fields)
         # This method will load a record from the database given the primary key
-        puts "module::Data **** #{table}, #{id}, #{selected_fields.inspect} ***"
         response = get('DataService.load', table, id, selected_fields)
       end
 
