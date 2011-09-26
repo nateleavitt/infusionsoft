@@ -2,7 +2,7 @@ module ApiInfusionsoft
   module Request
     # Perform an GET request
     def get(service_call, *args)
-      request(:get, service_call, args)
+      request(:get, service_call, *args)
     end
 
     def post(path, params={}, options={})
@@ -26,7 +26,7 @@ module ApiInfusionsoft
     def request(method, service_call, *args)
       case method.to_sym
       when :get
-        response = connection(service_call, args)
+        response = connection(service_call, *args)
       end
     end
   end
