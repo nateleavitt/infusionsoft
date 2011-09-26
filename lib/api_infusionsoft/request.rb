@@ -26,8 +26,8 @@ module ApiInfusionsoft
     def request(method, service_call, *args)
       case method.to_sym
       when :get
-        puts "***** #{method}, #{service_call}, #{*args.each{|a| a}}"
-        response = connection(service_call, *args)
+        puts "***** #{service_call} - #{args.each{|a| a.inspect}} *****"
+        response = connection(service_call, args)
       end
     end
   end
