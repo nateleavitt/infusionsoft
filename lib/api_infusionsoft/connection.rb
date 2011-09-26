@@ -11,7 +11,11 @@ module ApiInfusionsoft
         'port' => 443, 
         'use_ssl' => true
       })
+      begin 
       result = server.call("#{service_call}", api_key, *args)
+      rescue XMLRPC::FaultException => e
+          puts "*** INFUSION API ERROR: #{e.faultCode} - #{e.faultString} ***"
+      end
       return result
     end
 
