@@ -1,9 +1,11 @@
 require 'api_infusionsoft/configuration'
+require 'api_infusionosft/connection'
 require 'api_infusionsoft/request'
 
 module ApiInfusionsoft
 
   class Api
+    include Connection
     include Request
 
     attr_accessor *Configuration::VALID_OPTION_KEYS
