@@ -1,0 +1,5 @@
+*.gem
+log/*.log
+tmp/**/*
+.DS_Store
+rdoc/
