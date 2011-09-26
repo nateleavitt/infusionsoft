@@ -4,7 +4,7 @@ module Infusionsoft
     VALID_OPTION_KEYS = [
       :api_url,
       :api_key
-    ]
+    ].freeze
 
     # @private
     attr_accessor *VALID_OPTION_KEYS
@@ -27,7 +27,7 @@ module Infusionsoft
     end
 
     #def reset
-      #self.url = 'infused.infusionsoft.com'
+      #self.url = ''
       #self.api_key = 'na'
     #end
 
