@@ -2,7 +2,6 @@ module ApiInfusionsoft
   # Wrapper for the Infusionsoft API
   #
   # @note all services have been separated into different modules
-
   class Client < Api
     # Require client method modules after initializing the Client class in
     # order to avoid a superclass mismatch error, allowing those modules to be
