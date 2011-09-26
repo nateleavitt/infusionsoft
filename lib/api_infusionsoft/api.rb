@@ -1,5 +1,5 @@
 require 'api_infusionsoft/configuration'
-require 'api_infusionosft/connection'
+require 'api_infusionsoft/connection'
 require 'api_infusionsoft/request'
 
 module ApiInfusionsoft
