@@ -12,8 +12,8 @@ module ApiInfusionsoft
         'use_ssl' => true
       })
       begin 
-      puts "***** #{service_call}, #{api_key}, #{args.each{|a| "#{a},"}} *****"
-      result = server.call("#{service_call}", api_key, args)
+      puts "***** #{service_call}, #{api_key}, #{*args.each{|a| "#{a},"}} *****"
+      result = server.call("#{service_call}", api_key, *args)
       rescue XMLRPC::FaultException => e
           puts "*** INFUSION API ERROR: #{e.faultCode} - #{e.faultString} ***"
       end
