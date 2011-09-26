@@ -2,7 +2,6 @@ module ApiInfusionsoft
   module Request
     # Perform an GET request
     def get(service_call, *args)
-      puts "Request::get **** #{service_call}, #{args.inspect}"
       request(:get, service_call, *args)
     end
 
@@ -27,7 +26,6 @@ module ApiInfusionsoft
     def request(method, service_call, *args)
       case method.to_sym
       when :get
-        puts "Request::request **** #{method}, #{service_call}, #{args.inspect}"
         response = connection(service_call, *args)
       end
     end

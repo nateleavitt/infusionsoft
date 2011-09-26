@@ -4,7 +4,7 @@ module ApiInfusionsoft
   module Connection
     private
 
-    def connection(service_call, method, *args)
+    def connection(service_call, *args)
       server = XMLRPC::Client.new3({
         'host' => api_url, 
         'path' => "/api/xmlrpc", 
@@ -12,7 +12,6 @@ module ApiInfusionsoft
         'use_ssl' => true
       })
       begin 
-      puts "Connection ***** #{service_call}, #{api_key}, #{args.inspect} *****"
       result = server.call("#{service_call}", api_key, *args)
       rescue XMLRPC::FaultException => e
           puts "*** INFUSION API ERROR: #{e.faultCode} - #{e.faultString} ***"
