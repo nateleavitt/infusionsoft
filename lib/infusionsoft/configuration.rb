@@ -1,4 +1,4 @@
-module ApiInfusionsoft
+module Infusionsoft
 
   module Configuration
     VALID_OPTION_KEYS = [

@@ -1,18 +1,16 @@
-require 'api_infusionsoft/api'
-require 'api_infusionsoft/client'
-require 'api_infusionsoft/configuration'
-#require 'api_infusionsoft/base'
+require 'infusionsoft/api'
+require 'infusionsoft/client'
+require 'infusionsoft/configuration'
 #require 'api_infusionsoft/error'
-#require 'api_infusionsoft/search'
 
-module ApiInfusionsoft
+module Infusionsoft
   extend Configuration
   class << self
-    # Alias for ApiInfusionsoft::Client.new
+    # Alias for Infusionsoft::Client.new
     #
-    # @return [ApiInfusionsoft::Client]
+    # @return [Infusionsoft::Client]
     def new(options={})
-      ApiInfusionsoft::Client.new(options)
+      Infusionsoft::Client.new(options)
     end
 
     # Delegate to ApiInfusionsoft::Client
