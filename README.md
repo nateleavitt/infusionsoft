@@ -8,7 +8,9 @@ A Ruby wrapper for the Infusionsoft API
 documentation link here
 
 ## <a name="setup">Setup & Configuration</a>
-For Rails, create an initilizer in `config\initilizers` called infusionsoft.rb and the following
+For Rails 2.3 add `config.gem 'infusionsoft'` or for Rails 3 add it to Bundler
+
+Then create an initilizer in `config\initilizers` called infusionsoft.rb and the following
 
     Infusionsoft.configure do |config|
       config.api_url = 'YOUR_INFUSIONSOFT_URL' # example infused.infusionsoft.com
