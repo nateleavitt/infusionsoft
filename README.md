@@ -99,6 +99,10 @@ implementation, you will be personally responsible for providing patches in a
 timely fashion. If critical issues for a particular implementation exist at the
 time of a major release, support for that Ruby version may be dropped.
 
+## <a name="todos">Todos</a>
+* Need to fully implement testing
+* Need to add a history log for additional contributers
+
 ## <a name="copyright">Copyright</a>
 Copyright (c) 2011 Nathan Leavitt & Infused Systems
 See [LICENSE](https://github.com/nateleavitt/infusionsoft/blob/master/LICENSE.md) for details.
