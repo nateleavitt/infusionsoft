@@ -8,13 +8,11 @@ All previous versions will need to update their calls to follow the new schema
     gem install infusionsoft
 
 ## <a name="documentation">Documentation</a>
-[http://rubydoc.info/gems/infusionsoft/1.0.2/frames](http://rubydoc.info/gems/infusionsoft/1.0.2/frames)
+[http://rubydoc.info/gems/infusionsoft/frames](http://rubydoc.info/gems/infusionsoft/frames)
 
 ## <a name="setup">Setup & Configuration</a>
-Rails 2.3 - add `config.gem 'infusionsoft'` 
-Rails 3 - add `'infusionsoft'` to your `Gemfile`
-
-Then create an initializer in `config\initializers` called infusionsoft.rb and the following
+1. **Rails 2.3** - add `config.gem 'infusionsoft'` **Rails 3** - add `'infusionsoft'` to your `Gemfile`
+2. Then create an initializer in `config\initializers` called infusionsoft.rb and the following
 
     Infusionsoft.configure do |config|
       config.api_url = 'YOUR_INFUSIONSOFT_URL' # example infused.infusionsoft.com
@@ -26,7 +24,7 @@ Then create an initializer in `config\initializers` called infusionsoft.rb and t
     # Get a users first and last name using the DataService
     Infusionsoft.data_load('Contact', contact_id, [:FirstName, :LastName])
 
-    # Update a contact with specific field values 
+    # Update a contact with specific field values
     Infusionsoft.contact_upudate(contact_id, { :FirstName => 'first_name', :Email => 'test@test.com' })
 
     # Add a new Contact
