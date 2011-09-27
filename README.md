@@ -14,7 +14,9 @@ All previous versions will need to update their calls to follow the new schema
 1. **Rails 2.3** - add `config.gem 'infusionsoft'` **Rails 3** - add `'infusionsoft'` to your `Gemfile`
 2. Then create an initializer in `config\initializers` called infusionsoft.rb and the following
 
+<b></b>
 
+    # Added to your config\initializers file
     Infusionsoft.configure do |config|
       config.api_url = 'YOUR_INFUSIONSOFT_URL' # example infused.infusionsoft.com
       config.api_key = 'YOUR_INFUSIONSOFT_API_KEY'
