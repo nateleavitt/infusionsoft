@@ -11,9 +11,10 @@ All previous versions will need to update their calls to follow the new schema
 [http://rubydoc.info/gems/infusionsoft/1.0.2/frames](http://rubydoc.info/gems/infusionsoft/1.0.2/frames)
 
 ## <a name="setup">Setup & Configuration</a>
-For Rails 2.3 add `config.gem 'infusionsoft'` or for Rails 3 add it to Bundler
+Rails 2.3 - add `config.gem 'infusionsoft'` 
+Rails 3 - add `'infusionsoft'` to your `Gemfile`
 
-Then create an initilizer in `config\initilizers` called infusionsoft.rb and the following
+Then create an initializer in `config\initializers` called infusionsoft.rb and the following
 
     Infusionsoft.configure do |config|
       config.api_url = 'YOUR_INFUSIONSOFT_URL' # example infused.infusionsoft.com
