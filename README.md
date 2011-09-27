@@ -8,7 +8,7 @@ All previous versions will need to update their calls to follow the new schema
     gem install infusionsoft
 
 ## <a name="documentation">Documentation</a>
-[http://rdoc.info/github/nateleavitt/infusionsoft](http://rdoc.info/github/nateleavitt/infusionsoft)
+[http://rubydoc.info/gems/infusionsoft/1.0.2/frames](http://rubydoc.info/gems/infusionsoft/1.0.2/frames)
 
 ## <a name="setup">Setup & Configuration</a>
 For Rails 2.3 add `config.gem 'infusionsoft'` or for Rails 3 add it to Bundler

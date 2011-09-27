@@ -1,7 +1,6 @@
 require 'infusionsoft/api'
 require 'infusionsoft/client'
 require 'infusionsoft/configuration'
-#require 'api_infusionsoft/error'
 
 module Infusionsoft
   extend Configuration

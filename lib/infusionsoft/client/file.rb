@@ -1,8 +1,5 @@
 module Infusionsoft
   class Client
-    ########################
-    ###  File Service  ###
-    ########################
     module File
       def file_upload(contact_id, file_name, encoded_file_base64)
         response = get('FileService', 'uploadFile', contact_id, file_name, encoded_file_base64)
