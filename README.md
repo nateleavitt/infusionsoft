@@ -1,11 +1,14 @@
 # The Infusionsoft Ruby Gem
 A Ruby wrapper for the Infusionsoft API
 
+**This is a complete rewrite and has been implemented as a RubyGem**
+All previous versions will need to update their calls to follow the new schema
+
 ## <a name="installation">Installation</a>
     gem install infusionsoft
 
 ## <a name="documentation">Documentation</a>
-documentation link here
+[http://rdoc.info/github/nateleavitt/infusionsoft](http://rdoc.info/github/nateleavitt/infusionsoft)
 
 ## <a name="setup">Setup & Configuration</a>
 For Rails 2.3 add `config.gem 'infusionsoft'` or for Rails 3 add it to Bundler
