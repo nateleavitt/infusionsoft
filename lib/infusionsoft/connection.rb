@@ -22,6 +22,10 @@ module Infusionsoft
         retry if ok_to_retry
       rescue XMLRPC::FaultException => e
         puts "*** INFUSION API ERROR: #{e.faultCode} - #{e.faultString} ***"
+      rescue NoMethodError
+        @retry_count += 1
+        puts "*** INFUSION Content-Type Bug: retrying #{@retry_count} ***"
+        retry if ok_to_retry
       end
 
       return result
