@@ -8,7 +8,8 @@ module Infusionsoft
     include Connection
     include Request
 
-    attr_accessor *Configuration::VALID_OPTION_KEYS, :retry_count
+    attr_accessor :retry_count
+    attr_accessor *Configuration::VALID_OPTION_KEYS
 
     def initialize(options={})
       @retry_count = 0
