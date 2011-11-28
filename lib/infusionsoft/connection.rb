@@ -4,8 +4,6 @@ module Infusionsoft
   module Connection
     private
 
-    @retry_count = 0
-
     def connection(service_call, *args)
       server = XMLRPC::Client.new3({
         'host' => api_url,

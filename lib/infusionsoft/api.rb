@@ -8,9 +8,10 @@ module Infusionsoft
     include Connection
     include Request
 
-    attr_accessor *Configuration::VALID_OPTION_KEYS
+    attr_accessor *Configuration::VALID_OPTION_KEYS, :retry_count
 
     def initialize(options={})
+      @retry_count = 0
       options = Infusionsoft.options.merge(options)
       Configuration::VALID_OPTION_KEYS.each do |key|
         send("#{key}=", options[key])
