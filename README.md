@@ -28,7 +28,7 @@ All previous versions will need to update their calls to follow the new schema
     Infusionsoft.data_load('Contact', contact_id, [:FirstName, :LastName])
 
     # Update a contact with specific field values
-    Infusionsoft.contact_upudate(contact_id, { :FirstName => 'first_name', :Email => 'test@test.com' })
+    Infusionsoft.contact_update(contact_id, { :FirstName => 'first_name', :Email => 'test@test.com' })
 
     # Add a new Contact
     Infusionsoft.contact_add({:FirstName => 'first_name', :LastName => 'last_name', :Email => 'test@test.com'})
