@@ -11,7 +11,7 @@ module Infusionsoft
       # @param [Integer] contact_id of the Infusionsoft contact
       # @param [String] url that will be redirected to upon successfully adding card
       # @param [String] url that will be redirected to when there is a failure upon adding card
-      def request_token(contact_id, success_url, failure_url)
+      def credit_card_request_token(contact_id, success_url, failure_url)
         response = get('CreditCardSubmissionService', contact_id, success_url, failure_url)
       end
 
