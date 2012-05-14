@@ -14,6 +14,7 @@ module Infusionsoft
     require 'infusionsoft/client/file'
     require 'infusionsoft/client/ticket' # Deprecated by Infusionsoft
     require 'infusionsoft/client/search'
+    require 'infusionsoft/client/credit_card'
 
     include Infusionsoft::Client::Contact
     include Infusionsoft::Client::Email
@@ -23,5 +24,6 @@ module Infusionsoft
     include Infusionsoft::Client::File
     include Infusionsoft::Client::Ticket # Deprecated by Infusionsoft
     include Infusionsoft::Client::Search
+    include Infusionsoft::Client::CreditCard
   end
 end
