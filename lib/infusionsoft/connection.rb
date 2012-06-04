@@ -16,10 +16,14 @@ module Infusionsoft
         if result.nil?; result = [] end
       rescue Timeout::Error
         @retry_count += 1
-        puts "*** INFUSION API TIMEOUT: retrying #{@retry_count} ***"
+        puts "*** INFUSION API TIMEOUT: retrying call #{@retry_count} ***"
         retry if ok_to_retry
       rescue XMLRPC::FaultException => e
         puts "*** INFUSION API ERROR: #{e.faultCode} - #{e.faultString} ***"
+      rescue
+        @retry_count += 1
+        puts "*** INFUSION API ERROR CATCHALL: retrying call #{@retry_count} ***"
+        retry if ok_to_retry
       end
 
       return result
