@@ -18,8 +18,8 @@ module Infusionsoft
         @retry_count += 1
         puts "*** INFUSION API TIMEOUT: retrying #{@retry_count} ***"
         retry if ok_to_retry
-      rescue XMLRPC::FaultException => e
-        puts "*** INFUSION API ERROR: #{e.faultCode} - #{e.faultString} ***"
+      rescue => e
+        raise(InfusionAPIError, "*** INFUSION API ERROR: #{e.faultCode} - #{e.faultString} ***") if ['test', 'development', 'staging'].include?(Rails.env)
       end
 
       return result
@@ -31,3 +31,5 @@ module Infusionsoft
 
   end
 end
+
+class InfusionAPIError < StandardError; end
