@@ -17,8 +17,8 @@ module Infusionsoft
       rescue Timeout::Error
         retry_call(@retry_count)
         retry if ok_to_retry
-      rescue => e
-        raise(InfusionAPIError, "*** INFUSION API ERROR: #{e.faultCode} - #{e.faultString} ***") if ['test', 'development', 'staging'].include?(Rails.env)
+      rescue
+        #raise(InfusionAPIError, "*** INFUSION API ERROR ***") if ['test', 'development', 'staging'].include?(Rails.env)
         retry_call(@retry_count)
         retry if ok_to_retry
       end
