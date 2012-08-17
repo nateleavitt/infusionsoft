@@ -15,11 +15,12 @@ module Infusionsoft
         result = server.call("#{service_call}", api_key, *args)
         if result.nil?; result = [] end
       rescue Timeout::Error
-        @retry_count += 1
-        puts "*** INFUSION API TIMEOUT: retrying #{@retry_count} ***"
+        retry_call(@retry_count)
         retry if ok_to_retry
       rescue => e
         raise(InfusionAPIError, "*** INFUSION API ERROR: #{e.faultCode} - #{e.faultString} ***") if ['test', 'development', 'staging'].include?(Rails.env)
+        retry_call(@retry_count)
+        retry if ok_to_retry
       end
 
       return result
@@ -27,6 +28,11 @@ module Infusionsoft
 
     def ok_to_retry
       @retry_count <= 5 ? true : false
+    end
+
+    def retry_call(count)
+      @retry_count = count + 1
+      puts "*** INFUSION API ERROR: retrying #{@retry_count} ***"
     end
 
   end
