@@ -102,7 +102,7 @@ module Infusionsoft
       # @param [Boolean] bypass_commissions
       # @return [Boolean]
       def invoice_add_manual_payment(invoice_id, amount, date, type, description, bypass_commissions)
-        response = get('InvoiceService', 'addManualPayment', invoice_id, amount, date, type,
+        response = get('InvoiceService.addManualPayment', invoice_id, amount, date, type,
                        description, bypass_commissions)
       end
 
