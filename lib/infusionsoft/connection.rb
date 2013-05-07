@@ -14,24 +14,36 @@ module Infusionsoft
       begin
         result = server.call("#{service_call}", api_key, *args)
         if result.nil?; result = [] end
-      rescue Timeout::Error
-        @retry_count += 1
-        puts "*** INFUSION API TIMEOUT: retrying call #{@retry_count} ***"
-        retry if ok_to_retry
-      rescue XMLRPC::FaultException => e
-        puts "*** INFUSION API ERROR: #{e.faultCode} - #{e.faultString} ***"
-      rescue
-        @retry_count += 1
-        puts "*** INFUSION API ERROR CATCHALL: retrying call #{@retry_count} ***"
-        retry if ok_to_retry
+      rescue Timeout::Error => timeout
+        # Retry up to 5 times on a Timeout before raising it
+        ok_to_retry(timeout) ? retry : raise
+      rescue => e
+        # Wrap the underlying error in an InfusionAPIError
+        raise InfusionAPIError.new(e.to_s, e)
       end
 
       return result
     end
 
-    def ok_to_retry
-      @retry_count <= 5 ? true : false
+    def ok_to_retry(e)
+      @retry_count += 1
+      if @retry_count <= 5
+        Rails.logger.info "*** INFUSION API ERROR: [#{e}] retrying #{@retry_count} ***" if Rails
+        true
+      else
+        false
+      end
     end
 
   end
+end
+
+# Extend StandardError to keep track of Error being wrapped
+# Pattern from Exceptional Ruby by Avdi Grimm (http://avdi.org/talks/exceptional-ruby-2011-02-04/)
+class InfusionAPIError < StandardError
+  attr_reader :original
+    def initialize(msg, original=nil);
+      super(msg);
+      @original = original;
+    end
 end
