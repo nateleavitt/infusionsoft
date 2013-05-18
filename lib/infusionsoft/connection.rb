@@ -28,7 +28,7 @@ module Infusionsoft
     def ok_to_retry(e)
       @retry_count += 1
       if @retry_count <= 5
-        Rails.logger.info "*** INFUSION API ERROR: [#{e}] retrying #{@retry_count} ***" if Rails
+        Rails.logger.info "!!! INFUSION API ERROR: [#{e}] retrying #{@retry_count}" if Rails
         true
       else
         false
