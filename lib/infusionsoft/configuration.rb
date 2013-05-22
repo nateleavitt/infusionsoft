@@ -3,7 +3,8 @@ module Infusionsoft
   module Configuration
     VALID_OPTION_KEYS = [
       :api_url,
-      :api_key
+      :api_key,
+      :cert_file
     ].freeze
 
     # @private
