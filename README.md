@@ -19,7 +19,8 @@ All previous versions will need to update their calls to follow the new schema
     # Added to your config\initializers file
     Infusionsoft.configure do |config|
       config.api_url = 'YOUR_INFUSIONSOFT_URL' # example infused.infusionsoft.com
-      config.api_key = 'YOUR_INFUSIONSOFT_API_KEY'
+      config.api_key = 'YOUR_INFUSIONSOFT_API_KEY',
+      config.cert_file = '/path/to/your/cert_file' #optional - to specify location of ssl ca_file if necessary.
     end
 
 ## <a name="examples">Usage Examples</a>
