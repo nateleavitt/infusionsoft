@@ -15,7 +15,7 @@ module Infusionsoft
       #If the cert_file configuration option exists,
       #set the http verify mode and ca_file variables to reflect local ssl certificate path.
       unless cert_file.nil?
-        server.instance_variable_get("@http".verify_mode = OpenSSL::SSL::VERIFY_PEER
+        server.instance_variable_get("@http").verify_mode = OpenSSL::SSL::VERIFY_PEER
         server.instance_variable_get("@http").ca_file = cert_file
       end
       
