@@ -24,7 +24,7 @@ module Infusionsoft
 
     # Perform request
     def request(method, service_call, *args)
-      Rails.logger "<<<< Performing API Request to #{api_url}"
+      Rails.logger.info "<<<< Performing API Request to #{api_url}"
       case method.to_sym
       when :get
         response = connection(service_call, *args)
