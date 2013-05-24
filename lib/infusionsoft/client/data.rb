@@ -66,22 +66,8 @@ module Infusionsoft
       # @param [Integer] page
       # @param [Hash] data  the data you would like to query on. { :FirstName => 'first_name' }
       # @param [Array] selected_fields the fields and values you want back
-      # @param [String] field to order by
-      # @param [Boolean] ascending
-      # @return [Array<Hash>] the fields and associated values ordered by selected field
-      def data_query(table, limit, page, data, selected_fields, by, ascending)
-        response = get('DataService.query', table, limit, page, data, selected_fields, by, ascending)
-      end
-
-      # Queries records in a given table to find matches on certain fields.
-      #
-      # @param [String] table
-      # @param [Integer] limit
-      # @param [Integer] page
-      # @param [Hash] data  the data you would like to query on. { :FirstName => 'first_name' }
-      # @param [Array] selected_fields the fields and values you want back
       # @return [Array<Hash>] the fields and associated values
-      def data_query_order_by(table, limit, page, data, selected_fields)
+      def data_query(table, limit, page, data, selected_fields)
         response = get('DataService.query', table, limit, page, data, selected_fields)
       end
 
