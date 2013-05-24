@@ -71,6 +71,20 @@ module Infusionsoft
         response = get('DataService.query', table, limit, page, data, selected_fields)
       end
 
+      # Queries records in a given table to find matches on certain fields.
+      #
+      # @param [String] table
+      # @param [Integer] limit
+      # @param [Integer] page
+      # @param [Hash] data  the data you would like to query on. { :FirstName => 'first_name' }
+      # @param [Array] selected_fields the fields and values you want back
+      # @param [String] field by which to order the output results
+      # @param [Boolean] true ascending, false descending
+      # @return [Array<Hash>] the fields and associated values
+      def data_query_order_by(table, limit, page, data, selected_fields, by, ascending)
+        response = get('DataService.query', table, limit, page, data, selected_fields, by, ascending)
+      end
+
       # Adds a custom field to Infusionsoft
       #
       # @param [String] field_type options include Person, Company, Affiliate, Task/Appt/Note,
