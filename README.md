@@ -104,7 +104,8 @@ time of a major release, support for that Ruby version may be dropped.
 * Need to fully implement testing
 * Need to add a history log for additional contributers
 
-## <a name="license">MIT LICENSE</a>
+## <a name="copyright">Copyright</a>
+Copyright (c) 2013 Nathan Leavitt
 
 See [LICENSE](https://github.com/nateleavitt/infusionsoft/blob/master/LICENSE.md) for details.
 
