@@ -7,7 +7,7 @@ module Infusionsoft
   class Api
     include Connection
     include Request
-    include CHLogger if Rails
+    include CHLogger
 
     attr_accessor :retry_count
     attr_accessor *Configuration::VALID_OPTION_KEYS
