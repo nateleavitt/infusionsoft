@@ -1,6 +1,7 @@
 require 'infusionsoft/configuration'
 require 'infusionsoft/connection'
 require 'infusionsoft/request'
+require 'infusionsoft/ch_logger'
 
 module Infusionsoft
 
