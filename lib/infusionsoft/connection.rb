@@ -12,8 +12,9 @@ module Infusionsoft
         'use_ssl' => true
       })
       begin
+        chlogger.info "INFUSION API call:#{service_call} api_key: #{api_key} args: #{*args} at: #{Time.now}"
         result = server.call("#{service_call}", api_key, *args)
-        if result.nil?; result = [] end
+        if result.nil?; ok_to_retry('nil response') end
       rescue XMLRPC::Client::InfusionAPINilContentTypeError => nil_content
         # Retry up to 5 times on a nil content-type response from Infusionsoft
         ok_to_retry(nil_content) ? retry : raise
@@ -31,12 +32,13 @@ module Infusionsoft
     def ok_to_retry(e)
       @retry_count += 1
       if @retry_count <= 5
-        Rails.logger.info "!!! INFUSION API ERROR: [#{e}] retrying #{@retry_count}" if Rails
+        chlogger.warn "!!! INFUSION API ERROR: [#{e}] retrying #{@retry_count}" if Rails
         true
       else
         false
       end
     end
+
 
   end
 end
