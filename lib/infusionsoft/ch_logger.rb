@@ -1,5 +1,3 @@
-require "xmlrpc/client"
-
 module Infusionsoft
   module CHLogger
     def chlogger
