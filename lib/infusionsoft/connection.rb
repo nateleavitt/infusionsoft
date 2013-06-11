@@ -26,6 +26,7 @@ module Infusionsoft
         raise InfusionAPIError.new(e.to_s, e)
       end
 
+      chlogger.info "INFUSION API result:#{result.inspect}"
       return result
     end
 
