@@ -12,7 +12,7 @@ module Infusionsoft
         'use_ssl' => true
       })
       begin
-        chlogger.info "INFUSION API call:#{service_call} api_key:#{api_key} at:#{Time.now} args:#{%q(*args)}"
+        chlogger.info "INFUSION API call:#{service_call} api_key:#{api_key} at:#{Time.now} args:#{args.inspect}"
         result = server.call("#{service_call}", api_key, *args)
         if result.nil?; ok_to_retry('nil response') end
       rescue XMLRPC::Client::InfusionAPINilContentTypeError => nil_content
