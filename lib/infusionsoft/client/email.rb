@@ -116,6 +116,17 @@ module Infusionsoft
                        html_body, text_body)
       end
 
+      # This will send an email to a list of contacts, as well as record the email in the
+      # contacts' email history.
+      #
+      # @param [Array<Integer>] contact_list is an array of Contact id numbers you would like to send this email to
+      # @param [String] The Id of the template to send
+      # @return returns true if the email has been sent, an error will be sent back otherwise.      
+      def email_send_template(contact_list, template_id)
+        response = get('APIEmailService.sendTemplate', contact_list, template_id)
+      end
+
+
       # This method is used to update an already existing email template.
       #
       # @param [Integer] id
