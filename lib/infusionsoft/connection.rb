@@ -12,7 +12,7 @@ module Infusionsoft
         'use_ssl' => true
       })
       begin
-        chlogger.info "INFUSION API call:#{service_call} api_key:#{api_key} at:#{Time.now} args:#{args.inspect}"
+        api_logger.info "CALL: #{service_call} api_key:#{api_key} at:#{Time.now} args:#{args.inspect}"
         result = server.call("#{service_call}", api_key, *args)
         if result.nil?; ok_to_retry('nil response') end
       rescue XMLRPC::Client::InfusionAPINilContentTypeError => nil_content
@@ -26,14 +26,14 @@ module Infusionsoft
         raise InfusionAPIError.new(e.to_s, e)
       end
 
-      chlogger.info "INFUSION API result:#{result.inspect}"
+      api_logger.info "RESULT:#{result.inspect}"
       return result
     end
 
     def ok_to_retry(e)
       @retry_count += 1
       if @retry_count <= 5
-        chlogger.warn "!!! INFUSION API ERROR: [#{e}] retrying #{@retry_count}" if Rails
+        api_logger.warn "WARNING: [#{e}] retrying #{@retry_count}"
         true
       else
         false
@@ -49,6 +49,7 @@ end
 class InfusionAPIError < StandardError
   attr_reader :original
     def initialize(msg, original=nil);
+      api_logger.error "ERROR: #{msg}"
       super(msg);
       @original = original;
     end

@@ -1,14 +1,12 @@
 require 'infusionsoft/configuration'
 require 'infusionsoft/connection'
 require 'infusionsoft/request'
-require 'infusionsoft/ch_logger'
 
 module Infusionsoft
 
   class Api
     include Connection
     include Request
-    include CHLogger
 
     attr_accessor :retry_count
     attr_accessor *Configuration::VALID_OPTION_KEYS
