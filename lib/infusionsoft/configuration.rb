@@ -1,9 +1,11 @@
 module Infusionsoft
 
   module Configuration
+    # The list of available options
     VALID_OPTION_KEYS = [
       :api_url,
-      :api_key
+      :api_key,
+      :api_logger
     ].freeze
 
     # @private
