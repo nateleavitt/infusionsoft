@@ -10,7 +10,10 @@ module Infusionsoft
     def error; end
     def error(msg); $stdout.print msg end
 
-    # def debug; end
-    # def fatal; end
+    def debug; end
+    def debug(msg); $stdout.print msg end
+
+    def fatal; end
+    def fatal(msg); $stdout.print msg end
   end
 end
