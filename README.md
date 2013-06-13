@@ -80,9 +80,8 @@ operating system. Ideally, a bug report should include a pull request with faili
 ## <a name="rubies">Supported Rubies</a>
 This library aims to support the following Ruby implementations:
 
-* Ruby 1.8.7
-* Ruby 1.9.1
-* Ruby 1.9.2
+* Ruby = 1.8.7
+* Ruby >= 1.9
 * [JRuby](http://www.jruby.org/)
 * [Rubinius](http://rubini.us/)
 * [Ruby Enterprise Edition](http://www.rubyenterpriseedition.com/)
@@ -106,6 +105,7 @@ time of a major release, support for that Ruby version may be dropped.
 * Need to add a history log for additional contributers
 
 ## <a name="copyright">Copyright</a>
-Copyright (c) 2012 Nathan Leavitt
+Copyright (c) 2013 Nathan Leavitt
+
 See [LICENSE](https://github.com/nateleavitt/infusionsoft/blob/master/LICENSE.md) for details.
 
