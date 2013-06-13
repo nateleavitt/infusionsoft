@@ -28,6 +28,10 @@ module Infusionsoft
       options
     end
 
+    def api_logger=(logfile)
+      self.api_logger ||= logfile || Infusionsoft::APILogger.new
+    end
+
     #def reset
       #self.url = ''
       #self.api_key = 'na'
