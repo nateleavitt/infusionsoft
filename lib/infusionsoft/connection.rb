@@ -40,9 +40,9 @@ module Infusionsoft
       end
     end
 
-    # def api_logger
-    #   @api_logger || Infusionsoft::APILogger.new
-    # end
+    def api_logger
+      @api_logger || Infusionsoft::APILogger.new
+    end
 
   end
 end
