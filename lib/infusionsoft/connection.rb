@@ -15,9 +15,6 @@ module Infusionsoft
         api_logger.info "CALL: #{service_call} api_key:#{api_key} at:#{Time.now} args:#{args.inspect}"
         result = server.call("#{service_call}", api_key, *args)
         if result.nil?; ok_to_retry('nil response') end
-      rescue XMLRPC::Client::InfusionAPINilContentTypeError => nil_content
-        # Retry up to 5 times on a nil content-type response from Infusionsoft
-        ok_to_retry(nil_content) ? retry : raise
       rescue Timeout::Error => timeout
         # Retry up to 5 times on a Timeout before raising it
         ok_to_retry(timeout) ? retry : raise
