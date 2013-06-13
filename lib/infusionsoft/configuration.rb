@@ -33,6 +33,9 @@ module Infusionsoft
       #self.api_key = 'na'
     #end
 
+    def api_logger
+      @api_logger || Infusionsoft::APILogger.new
+    end
   end
 
 end
