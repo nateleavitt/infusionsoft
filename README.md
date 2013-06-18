@@ -1,8 +1,9 @@
 # The Infusionsoft Ruby Gem
 A Ruby wrapper for the Infusionsoft API
 
-**version 1.1.5 update notes**
-Added a custom logger option.  This will allow you to track all api calls/results in a separate log file.  Defaults to $stdout if none is specified.
+**update notes**
+
+v1.1.5 - Added a custom logger option.  This will allow you to track all api calls/results in a separate log file.  Defaults to $stdout if none is specified.
 
 To add logger specify `api_logger` in your config block.
 
