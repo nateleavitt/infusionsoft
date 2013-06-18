@@ -1,8 +1,10 @@
 # The Infusionsoft Ruby Gem
 A Ruby wrapper for the Infusionsoft API
 
-**This is a complete rewrite and has been implemented as a RubyGem**
-All previous versions will need to update their calls to follow the new schema
+**version 1.1.5 update notes**
+Added a custom logger option.  This will allow you to track all api calls/results in a separate log file.  Defaults to $stdout if none is specified.
+
+To add logger specify `api_logger` in your config block.
 
 ## <a name="installation">Installation</a>
     gem install infusionsoft
@@ -14,12 +16,11 @@ All previous versions will need to update their calls to follow the new schema
 1. **Rails 2.3** - add `config.gem 'infusionsoft'` **Rails 3** - add `'infusionsoft'` to your `Gemfile`
 2. Then create an initializer in `config\initializers` called infusionsoft.rb and the following
 
-<b></b>
-
     # Added to your config\initializers file
     Infusionsoft.configure do |config|
       config.api_url = 'YOUR_INFUSIONSOFT_URL' # example infused.infusionsoft.com
       config.api_key = 'YOUR_INFUSIONSOFT_API_KEY'
+      config.api_logger = Logger.new("#{Rails.root}/log/infusionsoft_api.log") # optional logger file
     end
 
 ## <a name="examples">Usage Examples</a>
