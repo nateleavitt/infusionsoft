@@ -45,7 +45,7 @@ end
 class InfusionAPIError < StandardError
   attr_reader :original
     def initialize(msg, original=nil);
-      api_logger.error "ERROR: #{msg}"
+      Infusionsoft.api_logger.error "ERROR: #{msg}"
       super(msg);
       @original = original;
     end
