@@ -1,8 +1,5 @@
 *.gem
-<<<<<<< HEAD
 *.gemspec
-=======
->>>>>>> bb249df7d84d0d38360bd50bb44f49ae1b45e9da
 log/*.log
 tmp/**/*
 .DS_Store
