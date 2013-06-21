@@ -1,4 +1,5 @@
 *.gem
+*.gemspec
 log/*.log
 tmp/**/*
 .DS_Store
