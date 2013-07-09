@@ -18,9 +18,9 @@ module Infusionsoft
       rescue Timeout::Error => timeout
         # Retry up to 5 times on a Timeout before raising it
         ok_to_retry(timeout) ? retry : raise
-      # rescue => e
-      #   # Wrap the underlying error in an InfusionAPIError
-      #   raise InfusionAPIError.new(e.to_s, e)
+      rescue => e
+        # Wrap the underlying error in an InfusionAPIError
+        raise InfusionAPIError.new(e.to_s, e)
       end
 
       api_logger.info "RESULT:#{result.inspect}"
