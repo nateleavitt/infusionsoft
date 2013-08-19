@@ -1,5 +1,6 @@
 # encoding: utf-8
-require File.expand_path('../lib/infusionsoft/version', __FILE__)
+$:.push File.expand_path("../lib", __FILE__)
+require 'infusionsoft/version'
 
 Gem::Specification.new do |gem|
   gem.name = 'infusionsoft'
@@ -12,6 +13,7 @@ Gem::Specification.new do |gem|
   gem.homepage = 'https://github.com/nateleavitt/infusionsoft'
   gem.require_paths = ['lib']
   gem.required_rubygems_version = Gem::Requirement.new('>= 1.3.6')
+  gem.add_development_dependency 'rake'
 
   gem.version = Infusionsoft::VERSION.dup
 end
