@@ -21,7 +21,6 @@ class Infusionsoft::ExceptionHandler
   }
 
   def initialize(xmlrpc_exception)
-    #TODO: super? to get logging?
     error_class = ERRORS[xmlrpc_exception.faultCode]
     if error_class
       raise error_class, xmlrpc_exception.faultString
