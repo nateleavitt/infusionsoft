@@ -144,7 +144,7 @@ module Infusionsoft
       # @return [Boolean] returns true/false if teamplate was updated successfully
       def email_update_template(id, title, category, from, to, cc, bcc, subject,
                                 text_body, html_body, content_type, merge_context)
-        response = get('APIEmailService.updateEmailTemplate', title, category, from,
+        response = get('APIEmailService.updateEmailTemplate', id, title, category, from,
                        to, cc, bcc, subject, text_body, html_body, content_type, merge_context)
       end
     end
