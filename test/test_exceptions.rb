@@ -15,8 +15,22 @@ class XMLRPC::Client
   end
 end
 
+class TestLogger
+  def info(msg); end
+  def warn(msg); end
+  def error(msg); end
+  def debug(msg); end
+  def fatal(msg); end
+end
+
 
 class TestExceptions < Test::Unit::TestCase
+
+  def setup
+    Infusionsoft.configure do |c|
+      c.api_logger = TestLogger.new()
+    end
+  end
 
   def test_should_raise_invalid_config
     exception_test(Infusionsoft::InvalidConfigError, 1, 'The configuration for the application is invalid.  Usually this is because there has not been a passphrase entered to generate an encrypted key.')
