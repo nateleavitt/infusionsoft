@@ -1,4 +1,5 @@
 require "xmlrpc/client"
+require 'infusionsoft/exception_handler'
 
 module Infusionsoft
   module Connection
@@ -18,10 +19,10 @@ module Infusionsoft
       rescue Timeout::Error => timeout
         # Retry up to 5 times on a Timeout before raising it
         ok_to_retry(timeout) ? retry : raise
-      rescue => e
-        # Wrap the underlying error in an InfusionAPIError
-        raise InfusionAPIError.new(e.to_s, e)
-      end
+      rescue XMLRPC::FaultException => xmlrpc_error
+        # Catch all XMLRPC exceptions and rethrow specific exceptions for each type of xmlrpc fault code
+        Infusionsoft::ExceptionHandler.new(xmlrpc_error)
+      end # Purposefully not catching other exceptions so that they can be handled up the stack
 
       api_logger.info "RESULT:#{result.inspect}"
       return result
@@ -38,15 +39,4 @@ module Infusionsoft
     end
 
   end
-end
-
-# Extend StandardError to keep track of Error being wrapped
-# Pattern from Exceptional Ruby by Avdi Grimm (http://avdi.org/talks/exceptional-ruby-2011-02-04/)
-class InfusionAPIError < StandardError
-  attr_reader :original
-    def initialize(msg, original=nil);
-      Infusionsoft.api_logger.error "ERROR: #{msg}"
-      super(msg);
-      @original = original;
-    end
 end
