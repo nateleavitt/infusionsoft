@@ -17,7 +17,7 @@ class Infusionsoft::ExceptionHandler
       12 => Infusionsoft::InvalidParameterError,
       13 => Infusionsoft::FailedLoginAttemptError,
       14 => Infusionsoft::NoAccessError,
-      15 => Infusionsoft::FailedLoginAttemptPasswordExpiredError,
+      15 => Infusionsoft::FailedLoginAttemptPasswordExpiredError
   }
 
   def initialize(xmlrpc_exception)

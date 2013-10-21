@@ -24,7 +24,7 @@ module Infusionsoft
         Infusionsoft::ExceptionHandler.new(xmlrpc_error)
       end # Purposefully not catching other exceptions so that they can be handled up the stack
 
-      api_logger.info "RESULT:#{result.inspect}"
+      api_logger.info "RESULT: #{result.inspect}"
       return result
     end
 
