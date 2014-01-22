@@ -22,9 +22,9 @@ module Infusionsoft
       #   'EmailAndNameAndCompany'
       # @return [Integer] id of the contact added or updated
       def contact_add_with_dup_check(data, check_type)
-        response = get('ContactService.addWithDupCheck', data, check_type)
+        contact_id = get('ContactService.addWithDupCheck', data, check_type)
         if data.has_key?("Email"); email_optin(data["Email"], "requested information"); end
-        return response
+        return contact_id
       end
 
       # Updates a contact in the database.
@@ -35,9 +35,9 @@ module Infusionsoft
       # @example
       #   { :FirstName => 'first_name', :StreetAddress1 => '123 N Street' }
       def contact_update(contact_id, data)
-        bool = get('ContactService.update', contact_id, data)
+        contact_id = get('ContactService.update', contact_id, data)
         if data.has_key?("Email"); email_optin(data["Email"], "requested information"); end
-        return bool
+        return contact_id
       end
 
       # Loads a contact from the database
