@@ -23,6 +23,8 @@ module Infusionsoft
       # @return [Integer] id of the contact added or updated
       def contact_add_with_dup_check(data, check_type)
         response = get('ContactService.addWithDupCheck', data, check_type)
+        if data.has_key?("Email"); email_optin(data["Email"], "requested information"); end
+        return response
       end
 
       # Updates a contact in the database.
