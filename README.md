@@ -29,6 +29,10 @@ A Ruby wrapper for the Infusionsoft API
     # Get a users first and last name using the DataService
     Infusionsoft.data_load('Contact', contact_id, [:FirstName, :LastName])
 
+    # Get a list of custom fields
+    Infusionsoft.data_find_by_field('DataFormField', 100, 0, 'FormId', -1, ['Name'])
+    # Note, when updating custom fields they are case sensisitve and need to be prefaced with a '_'
+
     # Update a contact with specific field values
     Infusionsoft.contact_update(contact_id, { :FirstName => 'first_name', :Email => 'test@test.com' })
 
