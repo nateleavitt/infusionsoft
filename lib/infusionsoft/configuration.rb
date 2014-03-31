@@ -5,7 +5,8 @@ module Infusionsoft
     VALID_OPTION_KEYS = [
       :api_url,
       :api_key,
-      :api_logger
+      :api_logger,
+      :user_agent # allows you to change the User-Agent of the request headers
     ].freeze
 
     # @private
