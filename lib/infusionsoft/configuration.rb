@@ -1,3 +1,5 @@
+require 'infusionsoft/version'
+
 module Infusionsoft
 
   module Configuration
@@ -33,6 +35,10 @@ module Infusionsoft
       #self.url = ''
       #self.api_key = 'na'
     #end
+
+    def user_agent
+      @user_agent ||= "Infusionsoft-#{VERSION} (RubyGem)"
+    end
 
     def api_logger
       @api_logger || Infusionsoft::APILogger.new
