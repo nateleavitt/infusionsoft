@@ -3,6 +3,8 @@ A Ruby wrapper for the Infusionsoft API
 
 **update notes**
 
+* v1.1.8 - Added a default user-agent in the headers. Also, give the
+  ability to set your own user-agent in the config block.
 * v1.1.5 - Added a custom logger option.  This will allow you to track all api calls/results in a separate log file.  Defaults to $stdout if none is specified. To add logger specify `api_logger` in your [config block](#setup--configuration).
 
 ## <a name="installation">Installation</a>
@@ -66,22 +68,7 @@ Here are some ways *you* can contribute:
 
 ## <a name="issues">Submitting an Issue</a>
 We use the [GitHub issue tracker](https://github.com/nateleavitt/infusionsoft/issues) to track bugs and
-features. Before submitting a bug report or feature request, check to make sure it hasn't already
-been submitted. You can indicate support for an existing issuse by voting it up. When submitting a
-bug report, please include a [Gist](https://gist.github.com/) that includes a stack trace and any
-details that may be necessary to reproduce the bug, including your gem version, Ruby version, and
-operating system. Ideally, a bug report should include a pull request with failing specs.
-
-## <a name="pulls">Submitting a Pull Request</a>
-1. Fork the project.
-2. Create a topic branch.
-3. Implement your feature or bug fix.
-4. Add documentation for your feature or bug fix.
-5. Run <tt>bundle exec rake doc:yard</tt>. If your changes are not 100% documented, go back to step 4.
-6. Add specs for your feature or bug fix.
-7. Run <tt>bundle exec rake spec</tt>. If your changes are not 100% covered, go back to step 6.
-8. Commit and push your changes.
-9. Submit a pull request. Please do not include changes to the gemspec, version, or history file. (If you want to create your own version for some reason, please do so in a separate commit.)
+features.
 
 ## <a name="rubies">Supported Rubies</a>
 This library aims to support the following Ruby implementations:
@@ -111,7 +98,7 @@ time of a major release, support for that Ruby version may be dropped.
 * Need to add a history log for additional contributers
 
 ## <a name="copyright">Copyright</a>
-Copyright (c) 2013 Nathan Leavitt
+Copyright (c) 2014 Nathan Leavitt
 
 See [LICENSE](https://github.com/nateleavitt/infusionsoft/blob/master/LICENSE.md) for details.
 
