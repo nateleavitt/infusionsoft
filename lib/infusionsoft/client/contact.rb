@@ -19,7 +19,6 @@ module Infusionsoft
       #
       # @param [Integer] contact_id
       # @param [Integer] duplicate_contact_id
-      # @return [Boolean] returns true/false if the contacts were successfully merged
       def contact_merge(contact_id, duplicate_contact_id)
         response = get('ContactService.merge', contact_id, duplicate_contact_id)
       end
