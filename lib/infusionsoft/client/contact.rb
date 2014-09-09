@@ -14,6 +14,15 @@ module Infusionsoft
         if data.has_key?("Email"); email_optin(data["Email"], "requested information"); end
         return contact_id
       end
+      
+      # Merge two contacts together.
+      #
+      # @param [Integer] contact_id
+      # @param [Integer] duplicate_contact_id
+      # @return [Boolean] returns true/false if the contacts were successfully merged
+      def contact_merge(contact_id, duplicate_contact_id)
+        response = get('ContactService.merge', contact_id, duplicate_contact_id)
+      end
 
       # Adds or updates a contact record based on matching data
       #
