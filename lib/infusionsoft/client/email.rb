@@ -123,7 +123,7 @@ module Infusionsoft
       # @param [String] The Id of the template to send
       # @return returns true if the email has been sent, an error will be sent back otherwise.      
       def email_send_template(contact_list, template_id)
-        response = get('APIEmailService.sendTemplate', contact_list, template_id)
+        response = get('APIEmailService.sendEmail', contact_list, template_id)
       end
 
 
