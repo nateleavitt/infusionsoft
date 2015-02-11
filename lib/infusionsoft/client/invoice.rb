@@ -40,7 +40,7 @@ module Infusionsoft
       # @param [Integer] credit_card_id
       # @param [Integer] merchant_account_id
       # @param [Boolean] bypass_commission
-      # @return [Hash] containing the following keys {'Successful => [Boolean],
+      # @return [Hash] containing the following keys {'Successful' => [Boolean],
       #   'Code' => [String], 'RefNum' => [String], 'Message' => [String]}
       def invoice_charge_invoice(invoice_id, notes, credit_card_id, merchant_account_id,
                                  bypass_commissions)
