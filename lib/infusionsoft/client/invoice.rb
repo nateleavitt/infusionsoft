@@ -65,15 +65,18 @@ module Infusionsoft
       # @param [Integer] contact_id
       # @param [Boolean] allow_duplicate
       # @param [Integer] cprogram_id the subscription id
+      # @param [Integer] qty Quantity of this service/product price - price charged per quantity
+      # @param [Float]   price Price to charge for the subscription
+      # @param [Boolean] taxable If tax should be charged on this subscription
       # @param [Integer] merchant_account_id
       # @param [Integer] credit_card_id
       # @param [Integer] affiliate_id
       # @param [Integer] days_till_charge number of days you want to wait till it's charged
-      def invoice_add_recurring_order(contact_id, allow_duplicate, cprogram_id,
+      def invoice_add_recurring_order(contact_id, allow_duplicate, cprogram_id, qty, price, taxable,
                                       merchant_account_id, credit_card_id, affiliate_id,
                                       days_till_charge)
         response = get('InvoiceService.addRecurringOrder', contact_id,
-                       allow_duplicate, cprogram_id, merchant_account_id, credit_card_id,
+                       allow_duplicate, cprogram_id, qty, price, taxable, merchant_account_id, credit_card_id,
                        affiliate_id, days_till_charge)
       end
 
