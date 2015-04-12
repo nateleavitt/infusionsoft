@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://test.infusionsoft.com/api/xmlrpc
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" ?><methodCall><methodName>ContactService.findByEmail</methodName><params><param><value><string>not_a_real_key</string></value></param><param><value><string>test@tester.com</string></value></param><param><value><array><data><value><string>Id</string></value></data></array></value></param></params></methodCall>
+    headers:
+      User-Agent:
+      - Infusionsoft-1.1.8 (RubyGem)
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '349'
+      Connection:
+      - keep-alive
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache-Coyote/1.1
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store
+      Expires:
+      - Fri, 10 Apr 2015 20:18:59 GMT
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '330'
+      Date:
+      - Fri, 10 Apr 2015 08:18:59 GMT
+      Set-Cookie:
+      - app-lb=2466578442.20480.0000; path=/
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="utf-8"?><methodResponse><params><param><value><array><data><value><struct><member><name>Id</name><value><i4>3606</i4></value></member></struct></value><value><struct><member><name>Id</name><value><i4>3610</i4></value></member></struct></value></data></array></value></param></params></methodResponse>
+    http_version: 
+  recorded_at: Fri, 10 Apr 2015 08:18:59 GMT
+recorded_with: VCR 2.9.3

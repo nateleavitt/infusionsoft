@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://test.infusionsoft.com/api/xmlrpc
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" ?><methodCall><methodName>DataService.load</methodName><params><param><value><string>not_a_real_key</string></value></param><param><value><string>Company</string></value></param><param><value><i4>3618</i4></value></param><param><value><array><data><value><string>Company</string></value><value><string>StreetAddress1</string></value><value><string>City</string></value><value><string>State</string></value><value><string>PostalCode</string></value><value><string>Country</string></value></data></array></value></param></params></methodCall>
+    headers:
+      User-Agent:
+      - Infusionsoft-1.1.8 (RubyGem)
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '579'
+      Connection:
+      - keep-alive
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache-Coyote/1.1
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store
+      Expires:
+      - Sun, 12 Apr 2015 05:34:01 GMT
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '513'
+      Date:
+      - Sat, 11 Apr 2015 17:34:01 GMT
+      Set-Cookie:
+      - app-lb=2466578442.20480.0000; path=/
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="utf-8"?><methodResponse><params><param><value><struct><member><name>PostalCode</name><value>98052</value></member><member><name>State</name><value>WA</value></member><member><name>Country</name><value>United
+        States</value></member><member><name>Company</name><value>Hogwarts of America</value></member><member><name>StreetAddress1</name><value>123
+        Wizard Ave.</value></member><member><name>City</name><value>Redmond</value></member></struct></value></param></params></methodResponse>
+    http_version: 
+  recorded_at: Sat, 11 Apr 2015 17:34:01 GMT
+recorded_with: VCR 2.9.3

@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://test.infusionsoft.com/api/xmlrpc
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" ?><methodCall><methodName>ContactService.merge</methodName><params><param><value><string>not_a_real_key</string></value></param><param><value><i4>3602</i4></value></param><param><value><i4>3604</i4></value></param></params></methodCall>
+    headers:
+      User-Agent:
+      - Infusionsoft-1.1.8 (RubyGem)
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '275'
+      Connection:
+      - keep-alive
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache-Coyote/1.1
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store
+      Expires:
+      - Thu, 09 Apr 2015 19:22:17 GMT
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '138'
+      Date:
+      - Thu, 09 Apr 2015 07:22:16 GMT
+      Set-Cookie:
+      - app-lb=2466578442.20480.0000; path=/
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="utf-8"?><methodResponse><params><param><value><boolean>1</boolean></value></param></params></methodResponse>
+    http_version: 
+  recorded_at: Thu, 09 Apr 2015 07:22:17 GMT
+recorded_with: VCR 2.9.3
