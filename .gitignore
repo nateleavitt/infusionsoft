@@ -3,3 +3,9 @@ log/*.log
 tmp/**/*
 .DS_Store
 rdoc/
+coverage
+.idea
+.bundle
+.ruby-gemset
+.ruby-version
+Gemfile.lock
