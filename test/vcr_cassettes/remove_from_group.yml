@@ -2,11 +2,11 @@
 http_interactions:
 - request:
     method: post
-    uri: https://yi226.infusionsoft.com/api/xmlrpc
+    uri: https://test.infusionsoft.com/api/xmlrpc
     body:
       encoding: UTF-8
       string: |
-        <?xml version="1.0" ?><methodCall><methodName>ContactService.removeFromGroup</methodName><params><param><value><string>84f119a62b3d8b3e0ece196184e8f0f5</string></value></param><param><value><i4>3794</i4></value></param><param><value><i4>382</i4></value></param></params></methodCall>
+        <?xml version="1.0" ?><methodCall><methodName>ContactService.removeFromGroup</methodName><params><param><value><string>not_a_real_key</string></value></param><param><value><i4>3794</i4></value></param><param><value><i4>382</i4></value></param></params></methodCall>
     headers:
       User-Agent:
       - Infusionsoft-1.1.8 (RubyGem)
