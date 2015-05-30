@@ -62,4 +62,18 @@ class ContactTest < Test::Unit::TestCase
       assert_instance_of Hash, result.first
     end
   end
+
+  def test_contact_add_to_group
+    VCR.use_cassette('add_to_group') do
+      result = Infusionsoft.contact_add_to_group(3794, 382)
+      assert_equal result, true
+    end
+  end
+
+  def test_contact_remove_from_group
+    VCR.use_cassette('remove_from_group') do
+      result = Infusionsoft.contact_remove_from_group(3794, 382)
+      assert_equal result, true
+    end
+  end
 end
