@@ -14,7 +14,7 @@ A Ruby wrapper for the Infusionsoft API
 [http://rubydoc.info/gems/infusionsoft/frames](http://rubydoc.info/gems/infusionsoft/frames)
 
 ## <a name="setup">Setup & Configuration</a>
-1. **Rails 2.3** - add `config.gem 'infusionsoft'` **Rails 3** - add `'infusionsoft'` to your `Gemfile`
+1. **Rails 2.3** - add `config.gem 'infusionsoft'` **Rails >= 3** - add `'infusionsoft'` to your `Gemfile`
 2. Then create an initializer in `config\initializers` called infusionsoft.rb and the following
 
 <b></b>
