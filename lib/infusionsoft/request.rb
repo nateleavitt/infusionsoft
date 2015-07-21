@@ -1,4 +1,5 @@
 module Infusionsoft
+  # Incase Infusionsoft ever creates a restful API :)
   module Request
     # Perform an GET request
     def get(service_call, *args)

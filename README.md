@@ -76,7 +76,7 @@ features.
 ## <a name="rubies">Supported Rubies</a>
 This library aims to support the following Ruby implementations:
 
-* Ruby = 1.8.7
+* Ruby = 1.8.7 (It will work, but tests require Ruby >= 1.9)
 * Ruby >= 1.9
 * [JRuby](http://www.jruby.org/)
 * [Rubinius](http://rubini.us/)
@@ -101,7 +101,7 @@ time of a major release, support for that Ruby version may be dropped.
 * Need to add a history log for additional contributers
 
 ## <a name="copyright">Copyright</a>
-Copyright (c) 2014 Nathan Leavitt
+Copyright (c) 2015 Nathan Leavitt
 
 See [LICENSE](https://github.com/nateleavitt/infusionsoft/blob/master/LICENSE.md) for details.
 
