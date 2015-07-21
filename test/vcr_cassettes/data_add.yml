@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://test.infusionsoft.com/api/xmlrpc
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" ?><methodCall><methodName>DataService.add</methodName><params><param><value><string>not_a_real_key</string></value></param><param><value><string>Company</string></value></param><param><value><struct><member><name>Company</name><value><string>Hogwarts of America</string></value></member><member><name>Phone1</name><value><string>123-456-7899</string></value></member><member><name>Website</name><value><string>http://hogwarts-usa.com</string></value></member><member><name>StreetAddress1</name><value><string>123 Wizard Ave.</string></value></member><member><name>City</name><value><string>Redmond</string></value></member><member><name>State</name><value><string>WA</string></value></member><member><name>PostalCode</name><value><string>98052</string></value></member><member><name>Country</name><value><string>United States</string></value></member></struct></value></param></params></methodCall>
+    headers:
+      User-Agent:
+      - Infusionsoft-1.1.8 (RubyGem)
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '937'
+      Connection:
+      - keep-alive
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache-Coyote/1.1
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store
+      Expires:
+      - Sun, 12 Apr 2015 05:34:01 GMT
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '131'
+      Date:
+      - Sat, 11 Apr 2015 17:34:00 GMT
+      Set-Cookie:
+      - app-lb=2466578442.20480.0000; path=/
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="utf-8"?><methodResponse><params><param><value><i4>3620</i4></value></param></params></methodResponse>
+    http_version: 
+  recorded_at: Sat, 11 Apr 2015 17:34:00 GMT
+recorded_with: VCR 2.9.3

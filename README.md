@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/TheMetalCode/infusionsoft.svg?branch=master)](https://travis-ci.org/TheMetalCode/infusionsoft)
+[![Coverage Status](https://coveralls.io/repos/TheMetalCode/infusionsoft/badge.svg?branch=master)](https://coveralls.io/r/TheMetalCode/infusionsoft?branch=master)
+
 # The Infusionsoft Ruby Gem
 A Ruby wrapper for the Infusionsoft API
 
@@ -21,7 +24,7 @@ A Ruby wrapper for the Infusionsoft API
 
     # Added to your config\initializers file
     Infusionsoft.configure do |config|
-      config.api_url = 'YOUR_INFUSIONSOFT_URL' # example infused.infusionsoft.com
+      config.api_url = 'YOUR_INFUSIONSOFT_URL' # example infused.infusionsoft.com DO NOT INCLUDE https://
       config.api_key = 'YOUR_INFUSIONSOFT_API_KEY'
       config.api_logger = Logger.new("#{Rails.root}/log/infusionsoft_api.log") # optional logger file
     end

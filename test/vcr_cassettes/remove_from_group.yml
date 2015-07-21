@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://test.infusionsoft.com/api/xmlrpc
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" ?><methodCall><methodName>ContactService.removeFromGroup</methodName><params><param><value><string>not_a_real_key</string></value></param><param><value><i4>3794</i4></value></param><param><value><i4>382</i4></value></param></params></methodCall>
+    headers:
+      User-Agent:
+      - Infusionsoft-1.1.8 (RubyGem)
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '284'
+      Connection:
+      - keep-alive
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache-Coyote/1.1
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store
+      Expires:
+      - Sat, 30 May 2015 19:31:42 GMT
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '138'
+      Date:
+      - Sat, 30 May 2015 07:31:42 GMT
+      Set-Cookie:
+      - app-lb=2466578442.20480.0000; path=/
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="utf-8"?><methodResponse><params><param><value><boolean>1</boolean></value></param></params></methodResponse>
+    http_version: 
+  recorded_at: Sat, 30 May 2015 07:31:42 GMT
+recorded_with: VCR 2.9.3
