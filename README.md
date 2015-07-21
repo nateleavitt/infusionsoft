@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/TheMetalCode/infusionsoft.svg?branch=master)](https://travis-ci.org/TheMetalCode/infusionsoft)
+[![Build Status](https://travis-ci.org/nateleavitt/infusionsoft.svg?branch=master)](https://travis-ci.org/nateleavitt/infusionsoft)
 [![Coverage Status](https://coveralls.io/repos/nateleavitt/infusionsoft/badge.svg?branch=master&service=github)](https://coveralls.io/github/nateleavitt/infusionsoft?branch=master)
 
 
