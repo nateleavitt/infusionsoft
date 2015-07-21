@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/TheMetalCode/infusionsoft.svg?branch=master)](https://travis-ci.org/TheMetalCode/infusionsoft)
-[![Coverage Status](https://coveralls.io/repos/TheMetalCode/infusionsoft/badge.svg?branch=master)](https://coveralls.io/r/TheMetalCode/infusionsoft?branch=master)
+[![Coverage Status](https://coveralls.io/repos/nateleavitt/infusionsoft/badge.svg?branch=master&service=github)](https://coveralls.io/github/nateleavitt/infusionsoft?branch=master)
+
 
 # The Infusionsoft Ruby Gem
 A Ruby wrapper for the Infusionsoft API
