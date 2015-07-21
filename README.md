@@ -6,8 +6,8 @@
 A Ruby wrapper for the Infusionsoft API
 
 **update notes**
-* 07/08/2015 - I am currently rewriting this gem to use the latest Infusionsoft API authentication Oauth flow. Also, I'm in the process of thinking about the best implementation for the gem. I would like to separate out the objects. For example make calls like so: Infusionsoft::Contact.add. If you have any suggestions, let me know.
-* v1.1.9 - Implementation of tests (Thanks! @TheMetalCode)
+* Currently - Going to add Infusionsoft API authentication Oauth flow. Also, I'm thinking of rewriting parts of it to make the calls more user friendly and adding some convenience methods. If you have any suggestions, let me know.
+* 07/21/2015 - Implementation of tests and build/coverage (Thanks! @TheMetalCode)
 * v1.1.8 - Added a default user-agent in the headers. Also, give the
   ability to set your own user-agent in the config block.
 * v1.1.5 - Added a custom logger option.  This will allow you to track all api calls/results in a separate log file.  Defaults to $stdout if none is specified. To add logger specify `api_logger` in your [config block](#setup--configuration).
