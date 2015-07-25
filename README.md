@@ -1,11 +1,13 @@
-[![Build Status](https://travis-ci.org/TheMetalCode/infusionsoft.svg?branch=master)](https://travis-ci.org/TheMetalCode/infusionsoft)
-[![Coverage Status](https://coveralls.io/repos/TheMetalCode/infusionsoft/badge.svg?branch=master)](https://coveralls.io/r/TheMetalCode/infusionsoft?branch=master)
+[![Build Status](https://travis-ci.org/nateleavitt/infusionsoft.svg?branch=master)](https://travis-ci.org/nateleavitt/infusionsoft)
+[![Coverage Status](https://coveralls.io/repos/nateleavitt/infusionsoft/badge.svg?branch=master&service=github)](https://coveralls.io/github/nateleavitt/infusionsoft?branch=master)
+
 
 # The Infusionsoft Ruby Gem
 A Ruby wrapper for the Infusionsoft API
 
 **update notes**
-
+* Currently - Going to add Infusionsoft API authentication Oauth flow. Also, I'm thinking of rewriting parts of it to make the calls more user friendly and adding some convenience methods. If you have any suggestions, let me know.
+* 07/21/2015 - Implementation of tests and build/coverage (Thanks! @TheMetalCode)
 * v1.1.8 - Added a default user-agent in the headers. Also, give the
   ability to set your own user-agent in the config block.
 * v1.1.5 - Added a custom logger option.  This will allow you to track all api calls/results in a separate log file.  Defaults to $stdout if none is specified. To add logger specify `api_logger` in your [config block](#setup--configuration).
@@ -17,7 +19,7 @@ A Ruby wrapper for the Infusionsoft API
 [http://rubydoc.info/gems/infusionsoft/frames](http://rubydoc.info/gems/infusionsoft/frames)
 
 ## <a name="setup">Setup & Configuration</a>
-1. **Rails 2.3** - add `config.gem 'infusionsoft'` **Rails 3** - add `'infusionsoft'` to your `Gemfile`
+1. **Rails 2.3** - add `config.gem 'infusionsoft'` **Rails >= 3** - add `'infusionsoft'` to your `Gemfile`
 2. Then create an initializer in `config\initializers` called infusionsoft.rb and the following
 
 <b></b>
@@ -76,7 +78,7 @@ features.
 ## <a name="rubies">Supported Rubies</a>
 This library aims to support the following Ruby implementations:
 
-* Ruby = 1.8.7
+* Ruby = 1.8.7 (It will work, but tests require Ruby >= 1.9)
 * Ruby >= 1.9
 * [JRuby](http://www.jruby.org/)
 * [Rubinius](http://rubini.us/)
@@ -101,7 +103,7 @@ time of a major release, support for that Ruby version may be dropped.
 * Need to add a history log for additional contributers
 
 ## <a name="copyright">Copyright</a>
-Copyright (c) 2014 Nathan Leavitt
+Copyright (c) 2015 Nathan Leavitt
 
 See [LICENSE](https://github.com/nateleavitt/infusionsoft/blob/master/LICENSE.md) for details.
 
