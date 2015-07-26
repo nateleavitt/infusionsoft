@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://test.infusionsoft.com/api/xmlrpc
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" ?><methodCall><methodName>APIEmailService.getOptStatus</methodName><params><param><value><string>not_a_real_key</string></value></param><param><value><string>hagglundized@gmail.com</string></value></param></params></methodCall>
+    headers:
+      User-Agent:
+      - Infusionsoft-1.1.9 (RubyGem)
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '266'
+      Connection:
+      - keep-alive
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache-Coyote/1.1
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store
+      Expires:
+      - Sun, 26 Jul 2015 12:58:44 GMT
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '128'
+      Date:
+      - Sun, 26 Jul 2015 00:58:43 GMT
+      Set-Cookie:
+      - app-lb=!bJjMumCYTheHPB1gcOos6QUUDc5trevd9zS0Fif3gxvA9Zs4zIBIqoXD62DMB7wqCMKf8zFJLdL9rbM=;
+        path=/
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="utf-8"?><methodResponse><params><param><value><i4>1</i4></value></param></params></methodResponse>
+    http_version: 
+  recorded_at: Sun, 26 Jul 2015 00:58:49 GMT
+recorded_with: VCR 2.9.3

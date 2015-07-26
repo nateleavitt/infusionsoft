@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://test.infusionsoft.com/api/xmlrpc
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" ?><methodCall><methodName>APIEmailService.getAvailableMergeFields</methodName><params><param><value><string>not_a_real_key</string></value></param><param><value><string>Contact</string></value></param></params></methodCall>
+    headers:
+      User-Agent:
+      - Infusionsoft-1.1.9 (RubyGem)
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '262'
+      Connection:
+      - keep-alive
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache-Coyote/1.1
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store
+      Expires:
+      - Sun, 26 Jul 2015 13:07:41 GMT
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Sun, 26 Jul 2015 01:07:41 GMT
+      Connection:
+      - close
+      Set-Cookie:
+      - app-lb=!eTyx0NRCU0EQYlNgcOos6QUUDc5trbQorGipa7K5SmDW4P3aScIkbcKFmJz1ILgT+ygT3zUerhKiIcE=;
+        path=/
+    body:
+      encoding: ASCII-8BIT
+      string: <?xml version="1.0" encoding="utf-8"?><methodResponse><params><param><value><array><data><value>~LoggedInUser.LastName~</value><value>~Contact.Address2Street1~</value><value>~Contact.ZipFour2~</value><value>~Contact.StreetAddress2~</value><value>~Contact.Username~</value><value>~Contact.EmailAddress2~</value><value>~Contact.Phone2~</value><value>~Contact.PostalCode3~</value><value>~Owner.EmailAddress2~</value><value>~Owner.Fax1Type~</value><value>~Owner.Phone1Ext~</value><value>~LoggedInUser.Fax1~</value><value>~Owner.PostalCode~</value><value>~EmailSent.PartialHash~</value><value>~Company.Website~</value><value>~Contact.Address3Street2~</value><value>~LoggedInUser.Phone3Type~</value><value>~EmailSent.PublicPartialHash~</value><value>~Owner.Fax2~</value><value>~Contact._WeeklyAttendance~</value><value>~Contact.SpouseName~</value><value>~LoggedInUser.Signature~</value><value>~Contact._Aretheyinacampaign~</value><value>~Company.City~</value><value>~Owner.Phone3Ext~</value><value>~Contact.Address2Street2~</value><value>~Contact._CustomerNotes~</value><value>~Contact.Phone4Type~</value><value>~Contact.StreetAddress1~</value><value>~Contact.EmailHash~</value><value>~Contact.Phone1~</value><value>~Contact.JobTitle~</value><value>~Owner.FirstName~</value><value>~LoggedInUser.Fax2~</value><value>~Contact.ZipFour1~</value><value>~Contact.LastName~</value><value>~Contact.MiddleName~</value><value>~Contact.Address3Street1~</value><value>~LoggedInUser.Phone1Ext~</value><value>~Contact.EmailAddress3~</value><value>~LoggedInUser.Phone3Ext~</value><value>~Contact.Fax1~</value><value>~Contact.Phone4Ext~</value><value>~Owner.Fax1~</value><value>~Contact._Pricing~</value><value>~Contact._ConsultingCompany~</value><value>~LoggedInUser.Phone1Type~</value><value>~Owner.State~</value><value>~Contact.Title~</value><value>~Contact.Phone5Ext~</value><value>~LoggedInUser.StreetAddress1~</value><value>~Contact._Goals~</value><value>~Company.HTMLMailingAddressBlock~</value><value>~Contact.Phone4~</value><value>~Owner.Email~</value><value>~Owner.StreetAddress1~</value><value>~Contact.Password~</value><value>~Contact.Phone3Type~</value><value>~Contact._ResetPasswordURL~</value><value>~Contact.City2~</value><value>~Company.PostalCode~</value><value>~LoggedInUser.StreetAddress2~</value><value>~Contact.Country~</value><value>~Contact.FirstName~</value><value>~LoggedInUser.Id~</value><value>~Contact.State~</value><value>~Contact.ReferralCode~</value><value>~Contact._ChMS~</value><value>~Contact.Company~</value><value>~LoggedInUser.Website~</value><value>~Contact.Fax2Type~</value><value>~LoggedInUser.City~</value><value>~Owner.Phone3Type~</value><value>~Contact.Phone3~</value><value>~Contact.PostalCode2~</value><value>~LoggedInUser.Fax2Type~</value><value>~Owner.Phone1Type~</value><value>~Contact.City3~</value><value>~Contact._Budget~</value><value>~LoggedInUser.Phone1~</value><value>~Contact._Aretheyworkingwithaconsultant~</value><value>~Contact.AssistantName~</value><value>~Contact.City~</value><value>~Contact._Budget0~</value><value>~Contact.Website~</value><value>~LoggedInUser.Country~</value><value>~LoggedInUser.Phone2Type~</value><value>~Owner.Country~</value><value>~Contact.ContactNotes~</value><value>~LoggedInUser.Phone2Ext~</value><value>~Contact.Anniversary~</value><value>~Owner.Fax2Type~</value><value>~Company.StreetAddress1~</value><value>~Owner.Phone2~</value><value>~Contact.Email~</value><value>~LoggedInUser.Phone2~</value><value>~Contact.Phone5~</value><value>~LoggedInUser.Email~</value><value>~Owner.City~</value><value>~Owner.Website~</value><value>~Contact.Phone2Ext~</value><value>~Company.Email~</value><value>~LoggedInUser.PostalCode~</value><value>~LoggedInUser.Company~</value><value>~Contact.Phone1Type~</value><value>~Company.Phone1~</value><value>~EmailSent.Id~</value><value>~Company.TaxId~</value><value>~Owner.Phone3~</value><value>~Owner.StreetAddress2~</value><value>~Contact.Fax1Type~</value><value>~Contact.Phone2Type~</value><value>~Company.Company~</value><value>~Contact.Leadsource~</value><value>~Contact.Birthday~</value><value>~Contact.Country3~</value><value>~Contact.Phone3Ext~</value><value>~Contact.Fax2~</value><value>~Contact.Phone5Type~</value><value>~Owner.Company~</value><value>~LoggedInUser.Phone3~</value><value>~LoggedInUser.State~</value><value>~App.Name~</value><value>~Contact.Nickname~</value><value>~Contact.PostalCode~</value><value>~Contact.State2~</value><value>~Owner.Phone2Type~</value><value>~Contact.Suffix~</value><value>~LoggedInUser.FirstName~</value><value>~Contact.Phone1Ext~</value><value>~Company.State~</value><value>~Contact.AssistantPhone~</value><value>~Contact.SSN~</value><value>~Owner.LastName~</value><value>~Contact.Id~</value><value>~Company.MailingAddressBlock~</value><value>~LoggedInUser.Title~</value><value>~Owner.Id~</value><value>~LoggedInUser.Fax1Type~</value><value>~Contact.Country2~</value><value>~Contact.AccountId~</value><value>~Contact._TypeofOrganization~</value><value>~Contact._ChMS0~</value><value>~LoggedInUser.HTMLSignature~</value><value>~Owner.Phone2Ext~</value><value>~Owner.Title~</value><value>~Contact.ZipFour3~</value><value>~Contact.State3~</value><value>~Owner.Signature~</value><value>~Contact.EditPage~</value><value>~Company.HTMLCanSpamAddressBlock~</value><value>~LoggedInUser.EmailAddress2~</value><value>~Company.Country~</value><value>~Owner.HTMLSignature~</value><value>~Company.StreetAddress2~</value><value>~Owner.Phone1~</value><value>~Company.CanSpamAddressBlock~</value></data></array></value></param></params></methodResponse>
+    http_version: 
+  recorded_at: Sun, 26 Jul 2015 01:07:46 GMT
+recorded_with: VCR 2.9.3
