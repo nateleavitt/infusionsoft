@@ -36,7 +36,7 @@ http_interactions:
       Content-Type:
       - text/xml;charset=UTF-8
       Content-Length:
-      - '291'
+      - '143'
       Date:
       - Sat, 25 Jul 2015 23:52:30 GMT
       Set-Cookie:
