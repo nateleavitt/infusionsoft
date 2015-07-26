@@ -92,4 +92,11 @@ class DataTest < Test::Unit::TestCase
       assert_true result
     end
   end
+
+  def test_data_get_app_setting
+    VCR.use_cassette('data_get_app_setting') do
+      result = Infusionsoft.data_get_app_setting('Contact', 'optiontitles')
+      assert_not_nil result
+    end
+  end
 end
