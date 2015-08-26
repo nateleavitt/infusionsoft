@@ -11,7 +11,7 @@ module Infusionsoft
       #   { :Email => 'test@test.com', :FirstName => 'first_name', :LastName => 'last_name' }
       def contact_add(data)
         contact_id = get('ContactService.add', data)
-        if data.has_key?("Email"); email_optin(data["Email"], "requested information"); end
+        if data.has_key?(:Email); email_optin(data[:Email], "requested information"); end
         return contact_id
       end
       
@@ -31,7 +31,7 @@ module Infusionsoft
       # @return [Integer] id of the contact added or updated
       def contact_add_with_dup_check(data, check_type)
         contact_id = get('ContactService.addWithDupCheck', data, check_type)
-        if data.has_key?("Email"); email_optin(data["Email"], "requested information"); end
+        if data.has_key?(:Email); email_optin(data[:Email], "requested information"); end
         return contact_id
       end
 
@@ -44,7 +44,7 @@ module Infusionsoft
       #   { :FirstName => 'first_name', :StreetAddress1 => '123 N Street' }
       def contact_update(contact_id, data)
         contact_id = get('ContactService.update', contact_id, data)
-        if data.has_key?("Email"); email_optin(data["Email"], "requested information"); end
+        if data.has_key?(:Email); email_optin(data[:Email], "requested information"); end
         return contact_id
       end
 
