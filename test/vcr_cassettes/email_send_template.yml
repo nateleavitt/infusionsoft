@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://test.infusionsoft.com/api/xmlrpc
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" ?><methodCall><methodName>APIEmailService.sendEmail</methodName><params><param><value><string>not_a_real_key</string></value></param><param><value><array><data><value><i4>304</i4></value></data></array></value></param><param><value><string>3649</string></value></param></params></methodCall>
+    headers:
+      User-Agent:
+      - Infusionsoft-1.1.9 (RubyGem)
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '330'
+      Connection:
+      - keep-alive
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache-Coyote/1.1
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store
+      Expires:
+      - Sun, 26 Jul 2015 18:21:45 GMT
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '138'
+      Date:
+      - Sun, 26 Jul 2015 06:21:45 GMT
+      Set-Cookie:
+      - app-lb=!DgCMPFLPwsRrJ7FgcOos6QUUDc5trW40eacyVJiXX9ivZvIUPj3Z1Vq2QHpBKKIGpIHZuWRMPAxjDss=;
+        path=/
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="utf-8"?><methodResponse><params><param><value><boolean>1</boolean></value></param></params></methodResponse>
+    http_version: 
+  recorded_at: Sun, 26 Jul 2015 06:21:50 GMT
+recorded_with: VCR 2.9.3

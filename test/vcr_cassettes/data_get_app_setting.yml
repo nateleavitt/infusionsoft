@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://test.infusionsoft.com/api/xmlrpc
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" ?><methodCall><methodName>DataService.getAppSetting</methodName><params><param><value><string>not_a_real_key</string></value></param><param><value><string>Contact</string></value></param><param><value><string>optiontitles</string></value></param></params></methodCall>
+    headers:
+      User-Agent:
+      - Infusionsoft-1.1.9 (RubyGem)
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '307'
+      Connection:
+      - keep-alive
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache-Coyote/1.1
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store
+      Expires:
+      - Sun, 26 Jul 2015 11:52:30 GMT
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '143'
+      Date:
+      - Sat, 25 Jul 2015 23:52:30 GMT
+      Set-Cookie:
+      - app-lb=!A/bDQyH+Uv/89StgcOos6QUUDc5trcDedgnc0I05zDPSlaHoDsjbvNjsryPmsEC6yQnCa2V/k60YWTM=;
+        path=/
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="utf-8"?><methodResponse><params><param><value>Sir Madam Sith Lord Darth</value></param></params></methodResponse>
+    http_version: 
+  recorded_at: Sat, 25 Jul 2015 23:52:35 GMT
+recorded_with: VCR 2.9.3

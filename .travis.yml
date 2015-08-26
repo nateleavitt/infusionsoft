@@ -3,7 +3,7 @@ rvm:
   - 1.9.3
   - 2.0.0
   - 2.1.5
-  - 2.2.1
+  - 2.2.2
   - jruby-19mode # JRuby in 1.9 mode
   - jruby-20mode # JRuby in 2.0 mode
   - rbx-2.5.2
