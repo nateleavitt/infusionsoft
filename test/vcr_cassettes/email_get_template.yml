@@ -1,0 +1,118 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://test.infusionsoft.com/api/xmlrpc
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" ?><methodCall><methodName>APIEmailService.getEmailTemplate</methodName><params><param><value><string>not_a_real_key</string></value></param><param><value><i4>3649</i4></value></param></params></methodCall>
+    headers:
+      User-Agent:
+      - Infusionsoft-1.1.9 (RubyGem)
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '244'
+      Connection:
+      - keep-alive
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache-Coyote/1.1
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store
+      Expires:
+      - Sun, 26 Jul 2015 13:17:06 GMT
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Sun, 26 Jul 2015 01:17:06 GMT
+      Connection:
+      - close
+      Set-Cookie:
+      - app-lb=!Flm102Q1X/paEH1gcOos6QUUDc5trRdQIdihKTUs5MfQrp4SjjTU2MPK3UBq8D4ZANIGn0BKhPrj7Nw=;
+        path=/
+    body:
+      encoding: ASCII-8BIT
+      string: "<?xml version=\"1.0\" encoding=\"utf-8\"?><methodResponse><params><param><value><struct><member><name>pieceTitle</name><value>Test
+        Email Template</value></member><member><name>categories</name><value></value></member><member><name>fromAddress</name><value>\"~Owner.FirstName~
+        ~Owner.LastName~\" &lt;~Owner.Email~&gt;</value></member><member><name>toAddress</name><value>~Contact.Email~</value></member><member><name>ccAddress</name><value></value></member><member><name>bccAddress</name><value></value></member><member><name>subject</name><value>Test
+        Testing</value></member><member><name>textBody</name><value>This email was
+        sent as HTML-only. To view it, please visit:\r\n~HostedEmail.Url~</value></member><member><name>htmlBody</name><value>&lt;div
+        id=\"mainContent\" style=\"text-align: left;\"&gt;\n&lt;table cellpadding=\"10\"
+        cellspacing=\"0\" style=\"background-color: rgb(204,204,204); width: 100%;
+        height: 100%;\"&gt;\n&lt;tbody&gt;\n&lt;tr&gt;\n&lt;td valign=\"top\"&gt;\n&lt;table
+        align=\"center\" cellpadding=\"0\" cellspacing=\"0\"&gt;\n&lt;tbody&gt;\n&lt;tr&gt;\n&lt;td&gt;\n&lt;table
+        cellpadding=\"0\" cellspacing=\"0\" style=\"width: 600px;\"&gt;\n&lt;tbody&gt;\n&lt;tr&gt;\n&lt;td
+        sectionid=\"preheader\" style=\"text-align: left; margin: 0; padding: 10px
+        0; border: none; white-space: normal; line-height: normal;\"&gt;\n&lt;div&gt;\n&lt;div&gt;\n&lt;div
+        style=\"font-size: 11px; font-family: arial; color: rgb(42,41,40); margin:
+        0; padding: 0; background: none; border: none; white-space: normal; line-height:
+        normal; overflow: visible; text-align: center;\"&gt;\n&lt;div contentid=\"preheader\"
+        style=\"font-size: 11px; font-family: arial; color: rgb(42,41,40); margin:
+        0; padding: 0; background: none; border: none; white-space: normal; line-height:
+        normal; overflow: visible; text-align: center;\"&gt;\n&lt;div&gt;\nHaving
+        trouble viewing this email? &lt;a href=\"~Link-1911~\" shape=\"rect\" style=\"color:
+        rgb(42,41,40);\"&gt;Click here&lt;/a&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;td
+        sectionid=\"header\" style=\"background-color: rgb(255,255,255); text-align:
+        left; margin: 0; padding: 0; border: none; white-space: normal; line-height:
+        normal; height: 30px;\"&gt;\n&lt;div&gt;\n&lt;div style=\"height: 15px; line-height:
+        15px;\"&gt;\n&amp;nbsp;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;div&gt;\n&lt;div&gt;\n&lt;div
+        style=\"font-size: 20px; font-weight: bold; font-family: arial; color: rgb(102,153,64);
+        margin: 0; padding: 0; background: none; border: none; white-space: normal;
+        line-height: normal; overflow: visible; text-align: left;\"&gt;\n&lt;div contentid=\"title\"
+        style=\"font-size: 20px; font-weight: bold; font-family: arial; color: rgb(102,153,64);
+        margin: 0; padding: 0; background: none; border: none; white-space: normal;
+        line-height: normal; overflow: visible; text-align: left;\"&gt;\n&lt;div&gt;\n&amp;nbsp;&amp;nbsp;&amp;nbsp;~Company.Company~\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;div&gt;\n&lt;div
+        style=\"height: 15px; line-height: 15px;\"&gt;\n&amp;nbsp;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/tbody&gt;\n&lt;/table&gt;\n&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;td&gt;\n&lt;table
+        bgcolor=\"#FFFFFF\" cellpadding=\"20\" cellspacing=\"0\" style=\"width: 600px;
+        background-color: rgb(255,255,255);\"&gt;\n&lt;tbody&gt;\n&lt;tr&gt;\n&lt;td
+        sectionid=\"body\" style=\"background-color: rgb(255,255,255); text-align:
+        left; margin: 0; padding: 20px; border: none; white-space: normal; line-height:
+        normal;\" valign=\"top\"&gt;\n&lt;div&gt;\n&lt;div&gt;\n&lt;div style=\"font-size:
+        20px; font-weight: bold; font-family: arial; color: rgb(102,153,64); margin:
+        0; padding: 0; background: none; border: none; white-space: normal; line-height:
+        normal; overflow: visible; text-align: left;\"&gt;\n&lt;div contentid=\"title\"
+        style=\"font-size: 20px; font-weight: bold; font-family: arial; color: rgb(102,153,64);
+        margin: 0; padding: 0; background: none; border: none; white-space: normal;
+        line-height: normal; overflow: visible; text-align: left;\"&gt;\n&lt;div&gt;\nHi
+        ~Contact.FirstName~\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;div&gt;\n&lt;div
+        style=\"height: 15px; line-height: 15px;\"&gt;\n&amp;nbsp;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;div&gt;\n&lt;div
+        style=\"font-size: 12px; font-family: arial; color: rgb(120,120,120); margin:
+        0; padding: 0; background: none; border: none; white-space: normal; line-height:
+        normal; overflow: visible;\"&gt;\n&lt;div contentid=\"paragraph\" style=\"font-size:
+        12px; font-family: arial; color: rgb(120,120,120); margin: 0; padding: 0;
+        background: none; border: none; white-space: normal; line-height: normal;
+        overflow: visible;\"&gt;\n&lt;div style=\"overflow: visible;\"&gt;\nThank
+        you for doing business with ~Company.Company~. \n&lt;br clear=\"none\" /&gt;\n&lt;br
+        clear=\"none\" /&gt;\n Sincerely,\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;div&gt;\n&lt;div
+        style=\"height: 15px; line-height: 15px;\"&gt;\n&amp;nbsp;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;div&gt;\n&lt;div&gt;\n~Owner.HTMLSignature~\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;td
+        sectionid=\"footer\" style=\"background-color: rgb(122,193,67); text-align:
+        left; margin: 0; padding: 20px; border: none; white-space: normal; line-height:
+        normal;\" valign=\"top\"&gt;\n&lt;div&gt;\n&lt;div style=\"font-size: 10px;
+        font-family: verdana; color: rgb(42,41,40); margin: 0; padding: 0; background:
+        none; border: none; white-space: normal; line-height: normal; overflow: visible;\"&gt;\n&lt;div
+        contentid=\"paragraph\" style=\"font-size: 10px; font-family: verdana; color:
+        rgb(42,41,40); margin: 0; padding: 0; background: none; border: none; white-space:
+        normal; line-height: normal; overflow: visible;\"&gt;\n&lt;div&gt;\nIf you
+        no longer wish to receive our emails, click the link below: \n&lt;br clear=\"none\"
+        /&gt;\n&lt;a href=\"~Link-1909~\" shape=\"rect\" style=\"font-size: 11px;
+        font-family: arial; color: rgb(0,114,143);\"&gt;Unsubscribe&lt;/a&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;div&gt;\n&lt;div
+        style=\"font-size: 10px; font-family: verdana; color: rgb(42,41,40); margin:
+        0; padding: 0; background: none; border: none; white-space: normal; line-height:
+        normal; overflow: visible;\"&gt;\n~Company.HTMLCanSpamAddressBlock~\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/tbody&gt;\n&lt;/table&gt;\n&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/tbody&gt;\n&lt;/table&gt;\n&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/tbody&gt;\n&lt;/table&gt;\n&lt;/div&gt;</value></member><member><name>contentType</name><value>Multipart</value></member><member><name>mergeContext</name><value>Contact</value></member></struct></value></param></params></methodResponse>"
+    http_version: 
+  recorded_at: Sun, 26 Jul 2015 01:17:11 GMT
+recorded_with: VCR 2.9.3

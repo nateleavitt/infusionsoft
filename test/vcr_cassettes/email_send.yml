@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://test.infusionsoft.com/api/xmlrpc
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" ?><methodCall><methodName>APIEmailService.sendEmail</methodName><params><param><value><string>not_a_real_key</string></value></param><param><value><array><data><value><i4>304</i4></value></data></array></value></param><param><value><string>the_dude@lebowski.com</string></value></param><param><value><string>hagglundized@gmail.com</string></value></param><param><value><string>hagglundized+cc@gmail.com</string></value></param><param><value><string>hagglundized+bcc@gmail.com</string></value></param><param><value><string>Multipart</string></value></param><param><value><string>Question</string></value></param><param><value><string>&lt;em&gt;Where's the money?&lt;/em&gt;</string></value></param><param><value><string>Where's the money?</string></value></param></params></methodCall>
+    headers:
+      User-Agent:
+      - Infusionsoft-1.1.9 (RubyGem)
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '823'
+      Connection:
+      - keep-alive
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache-Coyote/1.1
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store
+      Expires:
+      - Sun, 26 Jul 2015 18:12:41 GMT
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '138'
+      Date:
+      - Sun, 26 Jul 2015 06:12:41 GMT
+      Set-Cookie:
+      - app-lb=!oBOEXJjuJBkLy25gcOos6QUUDc5trTU8mWclXgkxITEmdEgR2ryRhepGolGaYggEokUho52K+zQFJRY=;
+        path=/
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="utf-8"?><methodResponse><params><param><value><boolean>0</boolean></value></param></params></methodResponse>
+    http_version: 
+  recorded_at: Sun, 26 Jul 2015 06:12:46 GMT
+recorded_with: VCR 2.9.3
