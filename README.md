@@ -20,7 +20,8 @@ A Ruby wrapper for the Infusionsoft API
 
 ## <a name="setup">Setup & Configuration</a>
 1. **Rails 2.3** - add `config.gem 'infusionsoft'` **Rails >= 3** - add `'infusionsoft'` to your `Gemfile`
-2. Then create an initializer in `config\initializers` called infusionsoft.rb and the following
+2. Enable the API on your Infusionsoft account (if you haven't already) and generate your API Key: [See Infusionsoft Doc](http://ug.infusionsoft.com/article/AA-00442/0/How-do-I-enable-the-Infusionsoft-API-and-generate-an-API-Key.html)
+3. Then create an initializer in `config\initializers` called infusionsoft.rb and the following
 
 <b></b>
 
