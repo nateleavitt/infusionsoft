@@ -12,8 +12,7 @@ module Infusionsoft
         'port' => 443,
         'use_ssl' => true
       })
-      client.http_header_extra = {'User-Agent' => user_agent}
-      client.http_header_extra = {'accept-encoding' => 'identity'}
+      client.http_header_extra = {'User-Agent' => user_agent, 'accept-encoding' => 'identity'}
       begin
         api_logger.info "CALL: #{service_call} api_url: #{api_url} api_key:#{api_key} at:#{Time.now} args:#{args.inspect}"
         result = client.call("#{service_call}", api_key, *args)
