@@ -11,7 +11,6 @@ module Infusionsoft
     require 'infusionsoft/client/invoice'
     require 'infusionsoft/client/data'
     require 'infusionsoft/client/affiliate'
-    require 'infusionsoft/client/affiliate_program'
     require 'infusionsoft/client/file'
     require 'infusionsoft/client/ticket' # Deprecated by Infusionsoft
     require 'infusionsoft/client/search'
@@ -23,7 +22,6 @@ module Infusionsoft
     include Infusionsoft::Client::Invoice
     include Infusionsoft::Client::Data
     include Infusionsoft::Client::Affiliate
-    include Infusionsoft::Client::AffiliateProgram
     include Infusionsoft::Client::File
     include Infusionsoft::Client::Ticket # Deprecated by Infusionsoft
     include Infusionsoft::Client::Search
