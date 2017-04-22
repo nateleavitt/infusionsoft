@@ -77,7 +77,7 @@ module Infusionsoft
                                       merchant_account_id, credit_card_id, affiliate_id,
                                       days_till_charge)
         response = get('InvoiceService.addRecurringOrder', contact_id,
-                       allow_duplicate, cprogram_id, qty, price, alllow_tax, merchant_account_id, credit_card_id,
+                       allow_duplicate, cprogram_id, qty, price, allow_tax, merchant_account_id, credit_card_id,
                        affiliate_id, days_till_charge)
       end
 
