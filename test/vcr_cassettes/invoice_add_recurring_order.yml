@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://jj1641.infusionsoft.com/api/xmlrpc
+    body:
+      encoding: UTF-8
+      string: '<?xml version="1.0" ?><methodCall><methodName>InvoiceService.addRecurringOrder</methodName><params><param><value><string>not_a_real_key</string></value></param><param><value><i4>9999</i4></value></param><param><value><boolean>1</boolean></value></param><param><value><i4>99</i4></value></param><param><value><i4>9</i4></value></param><param><value><i4>9999</i4></value></param><param><value><i4>0</i4></value></param><param><value><i4>0</i4></value></param></params></methodCall>
+
+'
+    headers:
+      User-Agent:
+      - Infusionsoft-1.1.9 (RubyGem)
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '498'
+      Connection:
+      - keep-alive
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Date:
+      - Tue, 02 May 2017 05:19:58 GMT
+      Expires:
+      - Tue, 02 May 2017 05:19:58 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Apache-Coyote/1.1
+      Set-Cookie:
+      - app-lb=!cUikj+k8HKXBdH1+PjA2WRnGtDEWJbE7XZ9YL6pt5yl0LGmznUJFvHlFJzYyIt6AFSc/BsMiohUVlS1XrBv5bqVlULoWq6qFxOlhbGK6CzXZtrUrJz8dZERhP/ef7JfEdsO6E+ARnUn2v/9Hd3nRaWwaBWTl7k4=;
+        path=/; Httponly; Secure
+      Vary:
+      - Accept-Encoding
+      X-Frame-Options:
+      - SAMEORIGIN
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: <?xml version="1.0" encoding="utf-8"?><methodResponse><params><param><value><i4>9999</i4></value></param></params></methodResponse>
+    http_version: 
+  recorded_at: Tue, 02 May 2017 05:19:59 GMT
+recorded_with: VCR 3.0.3

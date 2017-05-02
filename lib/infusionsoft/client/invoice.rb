@@ -65,6 +65,30 @@ module Infusionsoft
       # @param [Integer] contact_id
       # @param [Boolean] allow_duplicate
       # @param [Integer] cprogram_id the subscription id
+      # @param [Integer] merchant_account_id
+      # @param [Integer] credit_card_id
+      # @param [Integer] affiliate_id
+      # @param [Integer] days_till_charge number of days you want to wait till it's charged
+      def invoice_add_recurring_order(contact_id, allow_duplicate, cprogram_id,
+                                      merchant_account_id, credit_card_id, affiliate_id,
+                                      days_till_charge)
+
+        api_logger.warn "[DEPRECATION WARNING]: The invoice_add_subscription method more fully complies with Infusionsoft's published API documents. User is advised to review Infusionsoft's API and this gem's documentation for changes in parameters."
+
+        response = get('InvoiceService.addRecurringOrder', contact_id,
+                       allow_duplicate, cprogram_id, merchant_account_id, credit_card_id,
+                       affiliate_id, days_till_charge)
+      end
+
+
+
+      ################### This is a replacement method for invoice_add_recurring_order
+      # in order to fully support and comply with the Infusionsoft API documentation.
+      #
+      #
+      # @param [Integer] contact_id
+      # @param [Boolean] allow_duplicate
+      # @param [Integer] cprogram_id the subscription id
       # @param [Integer] qty
       # @param [Float]   price
       # @param [Boolean] allow_tax
@@ -72,7 +96,8 @@ module Infusionsoft
       # @param [Integer] credit_card_id
       # @param [Integer] affiliate_id
       # @param [Integer] days_till_charge number of days you want to wait till it's charged
-      def invoice_add_recurring_order(contact_id, allow_duplicate, cprogram_id,
+
+      def invoice_add_subscription(contact_id, allow_duplicate, cprogram_id,
                                       qty, price, allow_tax,
                                       merchant_account_id, credit_card_id, affiliate_id,
                                       days_till_charge)
@@ -80,6 +105,9 @@ module Infusionsoft
                        allow_duplicate, cprogram_id, qty, price, allow_tax, merchant_account_id, credit_card_id,
                        affiliate_id, days_till_charge)
       end
+
+
+
 
       # This modifies the commissions being earned on a particular subscription.
       # This does not affect previously generated invoices for this subscription.
