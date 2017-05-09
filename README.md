@@ -79,8 +79,7 @@ features.
 ## <a name="rubies">Supported Rubies</a>
 This library aims to support the following Ruby implementations:
 
-* Ruby = 1.8.7 (It will work, but tests require Ruby >= 1.9)
-* Ruby >= 1.9
+* Ruby >= 2.0
 * [JRuby](http://www.jruby.org/)
 * [Rubinius](http://rubini.us/)
 * [Ruby Enterprise Edition](http://www.rubyenterpriseedition.com/)
