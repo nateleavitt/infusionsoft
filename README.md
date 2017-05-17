@@ -16,7 +16,7 @@ A Ruby wrapper for the Infusionsoft API
     gem install infusionsoft
 
 ## <a name="documentation">Documentation</a>
-[http://rubydoc.info/gems/infusionsoft/frames](http://rubydoc.info/gems/infusionsoft/frames)
+[http://rubydoc.info/gems/infusionsoft](http://rubydoc.info/gems/infusionsoft)
 
 ## <a name="setup">Setup & Configuration</a>
 1. **Rails 2.3** - add `config.gem 'infusionsoft'` **Rails >= 3** - add `'infusionsoft'` to your `Gemfile`
