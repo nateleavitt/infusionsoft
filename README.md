@@ -6,7 +6,8 @@
 A Ruby wrapper for the Infusionsoft API
 
 **update notes**
-* Currently - Going to add Infusionsoft API authentication Oauth flow. Also, I'm thinking of rewriting parts of it to make the calls more user friendly and adding some convenience methods. If you have any suggestions, let me know.
+* v1.2.0 - Added `invoice_add_subscription` call to mirror Infusionsoft API parameters to eventually replace `invoice_add_recurring_order`
+* maybe?? - Going to add Infusionsoft API authentication Oauth flow. Also, I'm thinking of rewriting parts of it to make the calls more user friendly and adding some convenience methods. If you have any suggestions, let me know.
 * 07/21/2015 - Implementation of tests and build/coverage (Thanks! @TheMetalCode)
 * v1.1.8 - Added a default user-agent in the headers. Also, give the
   ability to set your own user-agent in the config block.
@@ -16,7 +17,7 @@ A Ruby wrapper for the Infusionsoft API
     gem install infusionsoft
 
 ## <a name="documentation">Documentation</a>
-[http://rubydoc.info/gems/infusionsoft/frames](http://rubydoc.info/gems/infusionsoft/frames)
+[http://rubydoc.info/gems/infusionsoft](http://rubydoc.info/gems/infusionsoft)
 
 ## <a name="setup">Setup & Configuration</a>
 1. **Rails 2.3** - add `config.gem 'infusionsoft'` **Rails >= 3** - add `'infusionsoft'` to your `Gemfile`
@@ -79,8 +80,7 @@ features.
 ## <a name="rubies">Supported Rubies</a>
 This library aims to support the following Ruby implementations:
 
-* Ruby = 1.8.7 (It will work, but tests require Ruby >= 1.9)
-* Ruby >= 1.9
+* Ruby >= 2.0
 * [JRuby](http://www.jruby.org/)
 * [Rubinius](http://rubini.us/)
 * [Ruby Enterprise Edition](http://www.rubyenterpriseedition.com/)
@@ -104,7 +104,7 @@ time of a major release, support for that Ruby version may be dropped.
 * Need to add a history log for additional contributers
 
 ## <a name="copyright">Copyright</a>
-Copyright (c) 2015 Nathan Leavitt
+Copyright (c) 2017 Nathan Leavitt
 
 See [LICENSE](https://github.com/nateleavitt/infusionsoft/blob/master/LICENSE.md) for details.
 
