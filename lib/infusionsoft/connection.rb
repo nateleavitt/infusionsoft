@@ -14,7 +14,7 @@ module Infusionsoft
       })
       client.http_header_extra = {'User-Agent' => user_agent}
       begin
-        api_logger.info "CALL: #{service_call} api_url: #{api_url} api_key:#{api_key} at:#{Time.now} args:#{args.inspect}"
+        api_logger.info "CALL: #{service_call} api_url: #{api_url} api_key:#{filter_log api_key} at:#{Time.now} args:#{args.inspect}"
         result = client.call("#{service_call}", api_key, *args)
         if result.nil?; ok_to_retry('nil response') end
       rescue Timeout::Error => timeout
@@ -37,6 +37,10 @@ module Infusionsoft
       else
         false
       end
+    end
+
+    def filter_log(s)
+      "*" * 20 + s[20..-1]
     end
 
   end
