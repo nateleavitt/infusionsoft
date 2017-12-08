@@ -8,6 +8,7 @@ module Infusionsoft
       :api_url,
       :api_key,
       :api_logger,
+      :use_oauth,
       :user_agent # allows you to change the User-Agent of the request headers
     ].freeze
 
@@ -35,6 +36,10 @@ module Infusionsoft
       #self.url = ''
       #self.api_key = 'na'
     #end
+
+    def use_oauth
+      @use_oauth || false
+    end
 
     def user_agent
       @user_agent ||= "Infusionsoft-#{VERSION} (RubyGem)"

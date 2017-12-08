@@ -6,9 +6,11 @@ module Infusionsoft
     private
 
     def connection(service_call, *args)
+      path = use_oauth ? "/crm/xmlrpc/v1?access_token=#{api_key}" : "/api/xmlrpc"
+      
       client = XMLRPC::Client.new3({
         'host' => api_url,
-        'path' => "/api/xmlrpc",
+        'path' => path,
         'port' => 443,
         'use_ssl' => true
       })
