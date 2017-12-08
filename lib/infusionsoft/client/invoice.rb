@@ -267,6 +267,24 @@ module Infusionsoft
                        product_id, percentage, amount, payout_type, description, date)
       end
 
+      # adding a manual payment for an invoice.
+      # This can be useful when the payments are not handled by Infusionsoft
+      # but you still needs to makethe invoice as paid
+      #
+      # @param [Integer] invoice_id
+      # @param [Float] amount
+      # @param [Date] date (time)
+      # @param [String] payment_type
+      #        - E.g 'Credit Card'
+      # @param [String] description
+      # @param [Boolean] bypass_commissions (Whether this payment
+      #                  should count towards affiliate commissions.)
+
+      def add_manual_payment(invoice_id, amount, date, payment_type, description, bypass_commission)
+        response = get('InvoiceService.addManualPayment', invoice_id, amount,
+                       date, payment_type, description, bypass_commission)
+      end
+
 
       # Deprecated - Adds a recurring order to the database.
       def invoice_add_recurring_order_with_price(contact_id, allow_duplicate, cprogram_id, qty,
