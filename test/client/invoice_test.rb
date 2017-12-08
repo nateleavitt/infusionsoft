@@ -18,4 +18,15 @@ class InvoiceTest < Test::Unit::TestCase
     end
   end
 
+  def test_add_manual_payment
+    VCR.use_cassette('invoice_add_manual_payment') do
+      result = Infusionsoft.invoice_add_manual_payment(60, 199.00, Time.now, 'Credit Card', 'Paid in full', false)
+
+      assert_instance_of TrueClass, result
+    end
+  end
+
+
+
+
 end

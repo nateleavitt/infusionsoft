@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://test.infusionsoft.com/api/xmlrpc
+    body:
+      encoding: UTF-8
+      string: '<?xml version="1.0" ?><methodCall><methodName>InvoiceService.addManualPayment</methodName><params><param><value><string>13bd0f9f842441fb2c2bef3e9ca18db6</string></value></param><param><value><i4>60</i4></value></param><param><value><double>199.0</double></value></param><param><value><dateTime.iso8601>20171208T11:56:04</dateTime.iso8601></value></param><param><value><string>Credit
+        Card</string></value></param><param><value><string>Paid in full</string></value></param><param><value><boolean>0</boolean></value></param></params></methodCall>
+
+'
+    headers:
+      User-Agent:
+      - Infusionsoft-1.2.0-a1 (RubyGem)
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '544'
+      Connection:
+      - keep-alive
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Date:
+      - Fri, 08 Dec 2017 00:56:04 GMT
+      Expires:
+      - Fri, 08 Dec 2017 00:56:04 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - Apache-Coyote
+      Set-Cookie:
+      - app-lb=!1NeLgEHXoumXOZ8vitCrYAxHQKcFLkyPXQbfrmps12iyapGnRjSDeX5+2MdcUx5kfspdV8ro+yAUMGMLC3IEKvrhF0QxV5BcT0mgXbNhhtUux37hZ8c2Y5cFymncwqosTT0bkq8fi2k7eHm/zSy/JfE0oeJI4BY=;
+        path=/; Httponly; Secure
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Robots-Tag:
+      - noindex, nofollow
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: <?xml version="1.0" encoding="utf-8"?><methodResponse><params><param><value><boolean>1</boolean></value></param></params></methodResponse>
+    http_version: 
+  recorded_at: Fri, 08 Dec 2017 00:56:05 GMT
+recorded_with: VCR 4.0.0
