@@ -297,7 +297,7 @@ module Infusionsoft
 
       # Deprecated - returns the invoice id from a one time order.
       def invoice_get_invoice_id(order_id)
-        response = get('InvoiceService.getinvoice_id', order_id)
+        response = get('InvoiceService.getInvoiceId', order_id)
       end
     end
   end
