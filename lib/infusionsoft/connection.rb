@@ -22,6 +22,9 @@ module Infusionsoft
       rescue Timeout::Error => timeout
         # Retry up to 5 times on a Timeout before raising it
         ok_to_retry(timeout) ? retry : raise
+      rescue OpenSSL::SSL::SSLError => ssl_error
+        # Retry up to 5 times on a SSL Handshake issue w Infusionsoft
+        ok_to_retry(ssl_error) ? retry : raise
       rescue XMLRPC::FaultException => xmlrpc_error
         # Catch all XMLRPC exceptions and rethrow specific exceptions for each type of xmlrpc fault code
         Infusionsoft::ExceptionHandler.new(xmlrpc_error)
