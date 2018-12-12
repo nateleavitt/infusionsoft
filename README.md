@@ -5,6 +5,8 @@
 # The Infusionsoft Ruby Gem
 A Ruby wrapper for the Infusionsoft API
 
+Update - Adding support for Rest in an upcoming release
+
 **update notes**
 * v1.2.2 - Catching Infusionsoft API SSL handshake issues
 * v1.2.1 - Added OAuth support
