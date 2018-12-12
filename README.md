@@ -6,6 +6,7 @@
 A Ruby wrapper for the Infusionsoft API
 
 **update notes**
+* v1.2.2 - Catching Infusionsoft API SSL handshake issues
 * v1.2.1 - Added OAuth support
 * v1.2.0 - Added `invoice_add_subscription` call to mirror Infusionsoft API parameters to eventually replace `invoice_add_recurring_order`
 * maybe?? - Going to add Infusionsoft API authentication Oauth flow. Also, I'm thinking of rewriting parts of it to make the calls more user friendly and adding some convenience methods. If you have any suggestions, let me know.
