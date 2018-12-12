@@ -5,9 +5,8 @@
 # The Infusionsoft Ruby Gem
 A Ruby wrapper for the Infusionsoft API
 
-Update - Adding support for Rest in an upcoming release
-
 **update notes**
+* upcoming - Adding support for rest api
 * v1.2.2 - Catching Infusionsoft API SSL handshake issues
 * v1.2.1 - Added OAuth support
 * v1.2.0 - Added `invoice_add_subscription` call to mirror Infusionsoft API parameters to eventually replace `invoice_add_recurring_order`
