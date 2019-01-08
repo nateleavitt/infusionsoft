@@ -3,7 +3,7 @@ require 'rest-client'
 module Infusionsoft
   # Incase Infusionsoft ever creates a restful API :)
   module Request
-    def xmlrpc(servic_call, *args)
+    def xmlrpc(service_call, *args)
       connection(service_call, *args)
     end
 

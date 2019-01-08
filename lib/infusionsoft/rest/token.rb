@@ -2,8 +2,8 @@ require 'rest-client'
 require 'uri'
 module Infusionsoft
   module Rest
-    class Token
 
+    class Token
       attr_accessor :access_token, :refresh_token, :expiration
 
       def initialize(token_params)
@@ -67,7 +67,7 @@ module Infusionsoft
           self.new(token_params)
         end
       end
-
     end
+
   end
 end
