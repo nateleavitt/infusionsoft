@@ -6,6 +6,7 @@ module Infusionsoft
     # Require client method modules after initializing the Client class in
     # order to avoid a superclass mismatch error, allowing those modules to be
     # Client-namespaced.
+    require 'infusionsoft/rest/token'
     require 'infusionsoft/client/contact'
     require 'infusionsoft/client/email'
     require 'infusionsoft/client/invoice'
@@ -17,6 +18,7 @@ module Infusionsoft
     require 'infusionsoft/client/credit_card'
     require 'infusionsoft/client/funnel'
 
+    include Infusionsoft::Rest::Token
     include Infusionsoft::Client::Contact
     include Infusionsoft::Client::Email
     include Infusionsoft::Client::Invoice
