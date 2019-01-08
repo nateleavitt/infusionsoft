@@ -23,7 +23,7 @@ module Infusionsoft
       # @param [Integer] contact_id
       # @param [Integer] duplicate_contact_id
       def contact_merge(contact_id, duplicate_contact_id)
-        response = get('ContactService.merge', contact_id, duplicate_contact_id)
+        response = xmlrpc('ContactService.merge', contact_id, duplicate_contact_id)
       end
 
       # Adds or updates a contact record based on matching data
@@ -67,7 +67,7 @@ module Infusionsoft
       # @example this is what you would get back
       #   { "FirstName" => "John", "LastName" => "Doe" }
       def contact_load(id, selected_fields)
-        response = get('ContactService.load', id, selected_fields)
+        response = xmlrpc('ContactService.load', id, selected_fields)
       end
 
       # Finds all contacts with the supplied email address in any of the three contact record email
@@ -77,7 +77,7 @@ module Infusionsoft
       # @param [Array] selected_fields the list of fields you want with it's data
       # @return [Array<Hash>] the list of contacts with it's fields and data
       def contact_find_by_email(email, selected_fields)
-        response = get('ContactService.findByEmail', email, selected_fields)
+        response = xmlrpc('ContactService.findByEmail', email, selected_fields)
       end
 
       # Adds a contact to a follow-up sequence (campaigns were the original name of follow-up sequences).
@@ -87,7 +87,7 @@ module Infusionsoft
       # @return [Boolean] returns true/false if the contact was added to the follow-up sequence
       #   successfully
       def contact_add_to_campaign(contact_id, campaign_id)
-        response = get('ContactService.addToCampaign', contact_id, campaign_id)
+        response = xmlrpc('ContactService.addToCampaign', contact_id, campaign_id)
       end
 
       # Returns the Id number of the next follow-up sequence step for the given contact.
@@ -97,7 +97,7 @@ module Infusionsoft
       # @return [Integer] id number of the next unfishished step in the given follow up sequence
       #   for the given contact
       def contact_get_next_campaign_step(contact_id, campaign_id)
-        response = get('ContactService.getNextCampaignStep', contact_id, campaign_id)
+        response = xmlrpc('ContactService.getNextCampaignStep', contact_id, campaign_id)
       end
 
       # Pauses a follow-up sequence for the given contact record
@@ -106,7 +106,7 @@ module Infusionsoft
       # @param [Integer] campaign_id
       # @return [Boolean] returns true/false if the sequence was paused
       def contact_pause_campaign(contact_id, campaign_id)
-        response = get('ContactService.pauseCampaign', contact_id, campaign_id)
+        response = xmlrpc('ContactService.pauseCampaign', contact_id, campaign_id)
       end
 
       # Removes a follow-up sequence from a contact record
@@ -115,7 +115,7 @@ module Infusionsoft
       # @param [Integer] campaign_id
       # @return [Boolean] returns true/false if removed
       def contact_remove_from_campaign(contact_id, campaign_id)
-        response = get('ContactService.removeFromCampaign', contact_id, campaign_id)
+        response = xmlrpc('ContactService.removeFromCampaign', contact_id, campaign_id)
       end
 
       # Resumes a follow-up sequence that has been stopped/paused for a given contact.
@@ -124,7 +124,7 @@ module Infusionsoft
       # @param [Ingeger] campaign_id
       # @return [Boolean] returns true/false if sequence was resumed
       def contact_resume_campaign(contact_id, campaign_id)
-        response = get('ConactService.resumeCampaignForContact', contact_id, campaign_id)
+        response = xmlrpc('ConactService.resumeCampaignForContact', contact_id, campaign_id)
       end
 
       # Immediately performs the given follow-up sequence step_id for the given contacts.
@@ -133,7 +133,7 @@ module Infusionsoft
       # @param [Integer] ) step_id
       # @return [Boolean] returns true/false if the step was rescheduled
       def contact_reschedule_campaign_step(list_of_contacts, step_id)
-        response = get('ContactService.reschedulteCampaignStep', list_of_contacts, step_id)
+        response = xmlrpc('ContactService.reschedulteCampaignStep', list_of_contacts, step_id)
       end
 
       # Removes a tag from a contact (groups were the original name of tags).
@@ -142,7 +142,7 @@ module Infusionsoft
       # @param [Integer] group_id
       # @return [Boolean] returns true/false if tag was removed successfully
       def contact_remove_from_group(contact_id, group_id)
-        response = get('ContactService.removeFromGroup', contact_id, group_id)
+        response = xmlrpc('ContactService.removeFromGroup', contact_id, group_id)
       end
 
       # Adds a tag to a contact
@@ -151,7 +151,7 @@ module Infusionsoft
       # @param [Integer] group_id
       # @return [Boolean] returns true/false if the tag was added successfully
       def contact_add_to_group(contact_id, group_id)
-        response = get('ContactService.addToGroup', contact_id, group_id)
+        response = xmlrpc('ContactService.addToGroup', contact_id, group_id)
       end
 
       # Runs an action set on a given contact record
@@ -163,20 +163,20 @@ module Infusionsoft
       #   [{ 'Action' => 'Create Task', 'Message' => 'task1 (Task) sent successfully', 'isError' =>
       #   nil }]
       def contact_run_action_set(contact_id, action_set_id)
-        response = get('ContactService.runActionSequence', contact_id, action_set_id)
+        response = xmlrpc('ContactService.runActionSequence', contact_id, action_set_id)
       end
 
       def contact_link_contact(remoteApp, remoteId, localId)
-        response = get('ContactService.linkContact', remoteApp, remoteId, localId)
+        response = xmlrpc('ContactService.linkContact', remoteApp, remoteId, localId)
       end
 
 
       def contact_locate_contact_link(locate_map_id)
-        response = get('ContactService.locateContactLink', locate_map_id)
+        response = xmlrpc('ContactService.locateContactLink', locate_map_id)
       end
 
       def contact_mark_link_updated(locate_map_id)
-        response = get('ContactService.markLinkUpdated', locate_map_id)
+        response = xmlrpc('ContactService.markLinkUpdated', locate_map_id)
       end
 
       # Creates a new recurring order for a contact.
@@ -189,7 +189,7 @@ module Infusionsoft
       # @param [Integer] affiliate_id
       def contact_add_recurring_order(contact_id, allow_duplicate, cprogram_id, merchant_account_id,
                                       credit_card_id, affiliate_id, days_till_charge)
-        response = get('ContactService.addRecurringOrder', contact_id, allow_duplicate, cprogram_id,
+        response = xmlrpc('ContactService.addRecurringOrder', contact_id, allow_duplicate, cprogram_id,
                             merchant_account_id, credit_card_id, affiliate_id, days_till_charge)
       end
 
@@ -200,7 +200,7 @@ module Infusionsoft
       # @param [Integer] action_set_id
       # @param [Hash] data
       def contact_run_action_set_with_params(contact_id, action_set_id, data)
-        response = get('ContactService.runActionSequence', contact_id, action_set_id, data)
+        response = xmlrpc('ContactService.runActionSequence', contact_id, action_set_id, data)
       end
 
     end

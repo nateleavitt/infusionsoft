@@ -14,6 +14,8 @@ Gem::Specification.new do |gem|
   gem.required_rubygems_version = Gem::Requirement.new('>= 1.3.6')
   gem.add_development_dependency 'rake'
 
+  gem.add_dependency "rest-client"
+
   gem.version = Infusionsoft::VERSION.dup
 end
 

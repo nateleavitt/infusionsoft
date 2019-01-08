@@ -21,7 +21,7 @@ module Infusionsoft
       # @param [String] merge_context can be Contact, ServiceCall, Opportunity, CreditCard
       def email_add(title, categories, from, to, cc, bcc, subject, text_body, html_body,
                     content_type, merge_context)
-        response = get('APIEmailService.addEmailTemplate', title, categories, from, to,
+        response = xmlrpc('APIEmailService.addEmailTemplate', title, categories, from, to,
                        cc, bcc, subject, text_body, html_body, content_type, merge_context)
       end
 
@@ -45,7 +45,7 @@ module Infusionsoft
       def email_attach(contact_id, from_name, from_address, to_address, cc_addresses,
                        bcc_addresses, content_type, subject, html_body, txt_body,
                        header, receive_date, send_date)
-        response = get('APIEmailService.attachEmail', contact_id, from_name, from_address,
+        response = xmlrpc('APIEmailService.attachEmail', contact_id, from_name, from_address,
                        to_address, cc_addresses, bcc_addresses, content_type, subject,
                        html_body, txt_body, header, receive_date, send_date)
       end
@@ -55,7 +55,7 @@ module Infusionsoft
       # @param [String] merge_context could include Contact, ServiceCall, Opportunity, or CreditCard
       # @return [Array] returns the merge fields for the given context
       def email_get_available_merge_fields(merge_context)
-        response = get('APIEmailService.getAvailableMergeFields', merge_context)
+        response = xmlrpc('APIEmailService.getAvailableMergeFields', merge_context)
       end
 
       # Retrieves the details for a particular email template.
@@ -63,7 +63,7 @@ module Infusionsoft
       # @param [Integer] id
       # @return [Hash] all data for the email template
       def email_get_template(id)
-        response = get('APIEmailService.getEmailTemplate', id)
+        response = xmlrpc('APIEmailService.getEmailTemplate', id)
       end
 
       # Retrieves the status of the given email address.
@@ -71,7 +71,7 @@ module Infusionsoft
       # @param [String] email_address
       # @return [Integer]  0 = opted out, 1 = single opt-in, 2 = double opt-in
       def email_get_opt_status(email_address)
-        response = get('APIEmailService.getOptStatus', email_address)
+        response = xmlrpc('APIEmailService.getOptStatus', email_address)
       end
 
       # This method opts-in an email address. This method only works the first time
@@ -83,7 +83,7 @@ module Infusionsoft
       #   reason is passed the system will default a reason of "API Opt In"
       # @return [Boolean]
       def email_optin(email_address, reason)
-        response = get('APIEmailService.optIn', email_address, reason)
+        response = xmlrpc('APIEmailService.optIn', email_address, reason)
       end
 
       # Opts-out an email address. Note that once an address is opt-out,
@@ -93,7 +93,7 @@ module Infusionsoft
       # @param [String] reason
       # @return [Boolean]
       def email_optout(email_address, reason)
-        response = get('APIEmailService.optOut', email_address, reason)
+        response = xmlrpc('APIEmailService.optOut', email_address, reason)
       end
 
       # This will send an email to a list of contacts, as well as record the email
@@ -111,7 +111,7 @@ module Infusionsoft
       # @return [Boolean] returns true/false if the email has been sent
       def email_send(contact_list, from_address, to_address, cc_addresses,
                      bcc_addresses, content_type, subject, html_body, text_body)
-        response = get('APIEmailService.sendEmail', contact_list, from_address,
+        response = xmlrpc('APIEmailService.sendEmail', contact_list, from_address,
                        to_address, cc_addresses, bcc_addresses, content_type, subject,
                        html_body, text_body)
       end
@@ -121,9 +121,9 @@ module Infusionsoft
       #
       # @param [Array<Integer>] contact_list is an array of Contact id numbers you would like to send this email to
       # @param [String] The Id of the template to send
-      # @return returns true if the email has been sent, an error will be sent back otherwise.      
+      # @return returns true if the email has been sent, an error will be sent back otherwise.
       def email_send_template(contact_list, template_id)
-        response = get('APIEmailService.sendEmail', contact_list, template_id)
+        response = xmlrpc('APIEmailService.sendEmail', contact_list, template_id)
       end
 
 
@@ -144,7 +144,7 @@ module Infusionsoft
       # @return [Boolean] returns true/false if teamplate was updated successfully
       def email_update_template(id, title, category, from, to, cc, bcc, subject,
                                 text_body, html_body, content_type, merge_context)
-        response = get('APIEmailService.updateEmailTemplate', id, title, category, from,
+        response = xmlrpc('APIEmailService.updateEmailTemplate', id, title, category, from,
                        to, cc, bcc, subject, text_body, html_body, content_type, merge_context)
       end
     end
