@@ -1,5 +1,7 @@
 require 'rest-client'
 require 'uri'
+require 'json'
+
 module Infusionsoft
   module Rest
 
@@ -7,12 +9,12 @@ module Infusionsoft
       attr_accessor :access_token, :refresh_token, :expiration
 
       def initialize(token_params)
-        access_token = token_params[:access_token] || token_params["access_token"]
-        refresh_token = token_params[:refresh_token] || token_params["refresh_token"]
-        expiration = token_params[:expiration] if token_params[:expiration]
+        @access_token = token_params[:access_token] || token_params["access_token"]
+        @refresh_token = token_params[:refresh_token] || token_params["refresh_token"]
+        @expiration = token_params[:expiration] if token_params[:expiration]
 
-        if token_params[:expires_in]
-          expiration = Time.now + token_params[:expires_in] || token_params["expires_in"]
+        if token_params[:expires_in] || token_params["expires_in"]
+          @expiration = Time.now + (token_params[:expires_in] || token_params["expires_in"])
         end
       end
 
@@ -45,6 +47,7 @@ module Infusionsoft
 
         rescue RestClient::ExceptionWithRespone => e
           #TODO what to do here?
+          false
         else
           token_params = JSON.parse(response.body)
           self.new(token_params)
@@ -62,6 +65,7 @@ module Infusionsoft
           response = RestClient.post("https://api.infusionsoft.com/token", params)
         rescue RestClient::ExceptionWithResponse => e
           # TODO: what to do here
+          false
         else
           token_params = JSON.parse(response.body)
           self.new(token_params)
