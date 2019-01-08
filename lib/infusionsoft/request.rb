@@ -49,4 +49,5 @@ module Infusionsoft
     else
       return JSON.parse(resp.body)
     end
+  end
 end
