@@ -66,7 +66,6 @@ module Infusionsoft
           token_params = JSON.parse(response.body).symbolize_keys
           self.new(token_params)
         end
-
       end
 
     end
