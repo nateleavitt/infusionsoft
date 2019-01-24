@@ -45,7 +45,7 @@ module Infusionsoft
 
           response = RestClient.post("https://api.infusionsoft.com/token", params, header)
 
-        rescue RestClient::ExceptionWithRespone => e
+        rescue RestClient::ExceptionWithResponse => e
           #TODO what to do here?
           false
         else
