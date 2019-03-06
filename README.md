@@ -124,5 +124,5 @@ time of a major release, support for that Ruby version may be dropped.
 ## <a name="copyright">Copyright</a>
 Copyright (c) 2019 Nathan Leavitt
 
-See [LICENSE](https://github.com/nateleavitt/infusionsoft/blob/master/LICENSE.md) for details.
+See [MIT LICENSE](https://github.com/nateleavitt/infusionsoft/blob/master/LICENSE.md) for details.
 
