@@ -14,7 +14,7 @@ module Infusionsoft
       def contact_add(data, optin_status=nil)
         contact_id = get('ContactService.add', data)
         email = data['Email'] || data[:Email]
-        if optin_status && email; email_optin(email, optin_status); end
+        if optin_status && email; ::Client::email_optin(email, optin_status); end
         return contact_id
       end
 
@@ -39,7 +39,7 @@ module Infusionsoft
       def contact_add_with_dup_check(data, check_type, optin_status=nil)
         contact_id = get('ContactService.addWithDupCheck', data, check_type)
         email = data['Email'] || data[:Email]
-        if optin_status && email; email_optin(email, optin_status); end
+        if optin_status && email; ::Client::email_optin(email, optin_status); end
         return contact_id
       end
 
@@ -55,7 +55,7 @@ module Infusionsoft
       def contact_update(contact_id, data, optin_status=nil)
         contact_id = get('ContactService.update', contact_id, data)
         email = data['Email'] || data[:Email]
-        if optin_status && email; email_optin(email, optin_status); end
+        if optin_status && email; ::Client::email_optin(email, optin_status); end
         return contact_id
       end
 
