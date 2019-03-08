@@ -5,16 +5,19 @@ module Infusionsoft
     module Contact
       # Creates a new contact record from the data passed in the associative array.
       #
-      # @param [Hash] data contains the mappable contact fields and it's data
+      # @param [Hash] data contains the mappable contact fields and it's data.
+      # @param [String] (Optional) email opt in verbiage. The contact will then be
+      # "Opted in" using the verviage supplied here.
       # @return [Integer] the id of the newly added contact
       # @example
-      #   { :Email => 'test@test.com', :FirstName => 'first_name', :LastName => 'last_name' }
-      def contact_add(data)
+      #   { :Email => 'test@test.com', :FirstName => 'first_name', :LastName => 'last_name' }, 'New Signup'
+      def contact_add(data, optin_status=nil)
         contact_id = get('ContactService.add', data)
-        if data.has_key?(:Email); email_optin(data[:Email], "requested information"); end
+        email = data['Email'] || data[:Email]
+        if optin_status && email; email_optin(email, optin_status); end
         return contact_id
       end
-      
+
       # Merge two contacts together.
       #
       # @param [Integer] contact_id
@@ -28,10 +31,15 @@ module Infusionsoft
       # @param [Array<Hash>] data the contact data you want added
       # @param [String] check_type available options are 'Email', 'EmailAndName',
       #   'EmailAndNameAndCompany'
+      # @param [String] (Optional) email opt in verbiage. The contact will then be
+      # "Opted in" using the verviage supplied here.
       # @return [Integer] id of the contact added or updated
-      def contact_add_with_dup_check(data, check_type)
+      # @example
+      #   { :Email => 'test@test.com', :FirstName => 'first_name', :LastName => 'last_name' }, 'Email', 'New Signup'
+      def contact_add_with_dup_check(data, check_type, optin_status=nil)
         contact_id = get('ContactService.addWithDupCheck', data, check_type)
-        if data.has_key?(:Email); email_optin(data[:Email], "requested information"); end
+        email = data['Email'] || data[:Email]
+        if optin_status && email; email_optin(email, optin_status); end
         return contact_id
       end
 
@@ -39,12 +47,15 @@ module Infusionsoft
       #
       # @param [Integer] contact_id
       # @param [Hash] data contains the mappable contact fields and it's data
+      # @param [String] (Optional) email opt in verbiage. The contact will then be
+      # "Opted in" using the verviage supplied here.
       # @return [Integer] the id of the contact updated
       # @example
-      #   { :FirstName => 'first_name', :StreetAddress1 => '123 N Street' }
-      def contact_update(contact_id, data)
+      #   { :FirstName => 'first_name', :StreetAddress1 => '123 N Street' }, 'New Signup'
+      def contact_update(contact_id, data, optin_status=nil)
         contact_id = get('ContactService.update', contact_id, data)
-        if data.has_key?(:Email); email_optin(data[:Email], "requested information"); end
+        email = data['Email'] || data[:Email]
+        if optin_status && email; email_optin(email, optin_status); end
         return contact_id
       end
 
