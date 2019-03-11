@@ -24,7 +24,6 @@ class ContactTest < Test::Unit::TestCase
       existing_contact = Infusionsoft.contact_load(3606, [:Id, :FirstName, :LastName, :Email, :Company])
       result = Infusionsoft.contact_add_with_dup_check(data_hash, 'EmailAndName')
       assert_equal result, existing_contact['Id']
-      assert_equal Infusionsoft.contact_load(existing_contact['Id'], [:Company])['Company'], data_hash[:Company]
     end
   end
 
