@@ -12,7 +12,7 @@ module Infusionsoft
       # @return [Integer] returns the invoice id
       def invoice_create_blank_order(contact_id, description, order_date, lead_affiliate_id,
                                      sale_affiliate_id)
-        response = get('InvoiceService.createBlankOrder', contact_id, description, order_date,
+        response = xmlrpc('InvoiceService.createBlankOrder', contact_id, description, order_date,
                         lead_affiliate_id, sale_affiliate_id)
       end
 
@@ -29,7 +29,7 @@ module Infusionsoft
       # @param [String] notes
       # @return [Boolean] returns true/false if it was added successfully or not
       def invoice_add_order_item(invoice_id, product_id, type, price, quantity, description, notes)
-        response = get('InvoiceService.addOrderItem', invoice_id, product_id, type, price,
+        response = xmlrpc('InvoiceService.addOrderItem', invoice_id, product_id, type, price,
                        quantity, description, notes)
       end
 
@@ -44,7 +44,7 @@ module Infusionsoft
       #   'Code' => [String], 'RefNum' => [String], 'Message' => [String]}
       def invoice_charge_invoice(invoice_id, notes, credit_card_id, merchant_account_id,
                                  bypass_commissions)
-        response = get('InvoiceService.chargeInvoice', invoice_id, notes, credit_card_id,
+        response = xmlrpc('InvoiceService.chargeInvoice', invoice_id, notes, credit_card_id,
                             merchant_account_id, bypass_commissions)
       end
 
@@ -54,7 +54,7 @@ module Infusionsoft
       # @param [Integer] cprogram_id the id of the subscription being deleted
       # @return [Boolean]
       def invoice_delete_subscription(cprogram_id)
-        response = get('InvoiceService.deleteSubscription', cprogram_id)
+        response = xmlrpc('InvoiceService.deleteSubscription', cprogram_id)
       end
 
       # Creates a subscription for a contact. Subscriptions are billing automatically
@@ -75,7 +75,7 @@ module Infusionsoft
 
         api_logger.warn "[DEPRECATION WARNING]: The invoice_add_subscription method more fully complies with Infusionsoft's published API documents. User is advised to review Infusionsoft's API and this gem's documentation for changes in parameters."
 
-        response = get('InvoiceService.addRecurringOrder', contact_id,
+        response = xmlrpc('InvoiceService.addRecurringOrder', contact_id,
                        allow_duplicate, cprogram_id, merchant_account_id, credit_card_id,
                        affiliate_id, days_till_charge)
       end
@@ -101,7 +101,7 @@ module Infusionsoft
                                       qty, price, allow_tax,
                                       merchant_account_id, credit_card_id, affiliate_id,
                                       days_till_charge)
-        response = get('InvoiceService.addRecurringOrder', contact_id,
+        response = xmlrpc('InvoiceService.addRecurringOrder', contact_id,
                        allow_duplicate, cprogram_id, qty, price, allow_tax, merchant_account_id, credit_card_id,
                        affiliate_id, days_till_charge)
       end
@@ -120,7 +120,7 @@ module Infusionsoft
       # @return [Boolean]
       def invoice_add_recurring_commission_override(recurring_order_id, affiliate_id,
                                                     amount, payout_type, description)
-        response = get('InvoiceService.addRecurringCommissionOverride', recurring_order_id,
+        response = xmlrpc('InvoiceService.addRecurringCommissionOverride', recurring_order_id,
                        affiliate_id, amount, payout_type, description)
       end
 
@@ -134,7 +134,7 @@ module Infusionsoft
       # @param [Boolean] bypass_commissions
       # @return [Boolean]
       def invoice_add_manual_payment(invoice_id, amount, date, type, description, bypass_commissions)
-        response = get('InvoiceService.addManualPayment', invoice_id, amount, date, type,
+        response = xmlrpc('InvoiceService.addManualPayment', invoice_id, amount, date, type,
                        description, bypass_commissions)
       end
 
@@ -145,7 +145,7 @@ module Infusionsoft
       # @param [Integer] recurring_order_id
       # @return [Integer] returns the id of the invoice that was created
       def invoice_create_invoice_for_recurring(recurring_order_id)
-        response = get('InvoiceService.createInvoiceForRecurring', recurring_order_id)
+        response = xmlrpc('InvoiceService.createInvoiceForRecurring', recurring_order_id)
       end
 
       # Adds a payment plan to an existing invoice.
@@ -168,7 +168,7 @@ module Infusionsoft
                                    merchant_account_id, days_between_retry, max_retry,
                                    initial_payment_amount, initial_payment_date, plan_start_date,
                                    number_of_payments, days_between_payments)
-        response = get('InvoiceService.addPaymentPlan', invoice_id, auto_charge,
+        response = xmlrpc('InvoiceService.addPaymentPlan', invoice_id, auto_charge,
                        credit_card_id, merchant_account_id, days_between_retry, max_retry,
                        initial_payment_amount, initial_payment_date, plan_start_date, number_of_payments,
                        days_between_payments)
@@ -179,14 +179,14 @@ module Infusionsoft
       # @param [Integer] invoice_id
       # @return [Float]
       def invoice_calculate_amount_owed(invoice_id)
-        response = get('InvoiceService.calculateAmountOwed', invoice_id)
+        response = xmlrpc('InvoiceService.calculateAmountOwed', invoice_id)
       end
 
       # Retrieve all Payment Types currently setup under the Order Settings section of Infusionsoft.
       #
       # @return [Array]
       def invoice_get_all_payment_otpions
-        response = get('InvoiceService.getAllPaymentOptions')
+        response = xmlrpc('InvoiceService.getAllPaymentOptions')
       end
 
       # Retrieves all payments for a given invoice.
@@ -194,7 +194,7 @@ module Infusionsoft
       # @param [Integer] invoice_id
       # @return [Array<Hash>] returns an array of payments
       def invoice_get_payments(invoice_id)
-        response = get('Invoice.getPayments', invoice_id)
+        response = xmlrpc('Invoice.getPayments', invoice_id)
       end
 
       # Locates an existing card in the system for a contact, using the last 4 digits.
@@ -203,7 +203,7 @@ module Infusionsoft
       # @param [Integer] last_four
       # @return [Integer] returns the id of the credit card
       def invoice_locate_existing_card(contact_id, last_four)
-        response = get('InvoiceService.locateExistingCard', contact_id, last_four)
+        response = xmlrpc('InvoiceService.locateExistingCard', contact_id, last_four)
       end
 
       # Calculates tax, and places it onto the given invoice.
@@ -211,7 +211,7 @@ module Infusionsoft
       # @param [Integer] invoice_id
       # @return [Boolean]
       def invoice_recalculate_tax(invoice_id)
-        response = get('InvoiceService.recalculateTax', invoice_id)
+        response = xmlrpc('InvoiceService.recalculateTax', invoice_id)
       end
 
       # This will validate a credit card in the system.
@@ -219,7 +219,7 @@ module Infusionsoft
       # @param [Integer] credit_card_id if the card is already in the system
       # @return [Hash] returns a hash { 'Valid' => false, 'Message' => 'Card is expired' }
       def invoice_validate_card(credit_card_id)
-        response = get('InvoiceService.validateCreditCard', credit_card_id)
+        response = xmlrpc('InvoiceService.validateCreditCard', credit_card_id)
       end
 
       # This will validate a credit card by passing in values of the
@@ -228,14 +228,14 @@ module Infusionsoft
       # @param [Hash] data
       # @return [Hash] returns a hash { 'Valid' => false, 'Message' => 'Card is expired' }
       def invoice_validate_card(data)
-        response = get('InvoiceService.validateCreditCard', data)
+        response = xmlrpc('InvoiceService.validateCreditCard', data)
       end
 
       # Retrieves the shipping options currently setup for the Infusionsoft shopping cart.
       #
       # @return [Array]
       def invoice_get_all_shipping_options
-        response = get('Invoice.getAllShippingOptions')
+        response = xmlrpc('Invoice.getAllShippingOptions')
       end
 
       # Changes the next bill date on a subscription.
@@ -244,7 +244,7 @@ module Infusionsoft
       # @param [Date] next_bill_date
       # @return [Boolean]
       def invoice_update_recurring_next_bill_date(job_recurring_id, next_bill_date)
-        response = get('InvoiceService.updateJobRecurringNextBillDate', job_recurring_id, next_bill_date)
+        response = xmlrpc('InvoiceService.updateJobRecurringNextBillDate', job_recurring_id, next_bill_date)
       end
 
 
@@ -263,7 +263,7 @@ module Infusionsoft
       # @return [Boolean]
       def invoice_add_order_commission_override(invoice_id, affiliate_id, product_id, percentage,
                                                 amount, payout_type, description, date)
-        response = get('InvoiceService.addOrderCommissionOverride', invoice_id, affiliate_id,
+        response = xmlrpc('InvoiceService.addOrderCommissionOverride', invoice_id, affiliate_id,
                        product_id, percentage, amount, payout_type, description, date)
       end
 
@@ -281,7 +281,7 @@ module Infusionsoft
       #                  should count towards affiliate commissions.)
 
       def add_manual_payment(invoice_id, amount, date, payment_type, description, bypass_commission)
-        response = get('InvoiceService.addManualPayment', invoice_id, amount,
+        response = xmlrpc('InvoiceService.addManualPayment', invoice_id, amount,
                        date, payment_type, description, bypass_commission)
       end
 
@@ -290,14 +290,14 @@ module Infusionsoft
       def invoice_add_recurring_order_with_price(contact_id, allow_duplicate, cprogram_id, qty,
                                                  price, allow_tax, merchant_account_id,
                                                  credit_card_id, affiliate_id, days_till_charge)
-        response = get('InvoiceService.addRecurringOrder', contact_id, allow_duplicate,
+        response = xmlrpc('InvoiceService.addRecurringOrder', contact_id, allow_duplicate,
                        cprogram_id, qty, price, allow_tax, merchant_account_id, credit_card_id,
                        affiliate_id, days_till_charge)
       end
 
       # Deprecated - returns the invoice id from a one time order.
       def invoice_get_invoice_id(order_id)
-        response = get('InvoiceService.getInvoiceId', order_id)
+        response = xmlrpc('InvoiceService.getInvoiceId', order_id)
       end
     end
   end

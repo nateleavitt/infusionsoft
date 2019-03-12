@@ -2,6 +2,7 @@ require 'infusionsoft/api'
 require 'infusionsoft/client'
 require 'infusionsoft/configuration'
 require 'infusionsoft/api_logger'
+require 'infusionsoft/rest/token'
 
 module Infusionsoft
   extend Configuration
