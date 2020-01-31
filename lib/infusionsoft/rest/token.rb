@@ -12,9 +12,11 @@ module Infusionsoft
         @access_token = token_params[:access_token] || token_params["access_token"]
         @refresh_token = token_params[:refresh_token] || token_params["refresh_token"]
         @expiration = token_params[:expiration] if token_params[:expiration]
+        expires_in = token_params[:expires_in] || token_params["expires_in"]
 
-        if token_params[:expires_in] || token_params["expires_in"]
-          @expiration = Time.now + (token_params[:expires_in] || token_params["expires_in"])
+        if expires_in
+          expires_in = expires_in.to_i
+          @expiration = Time.now + expires_in
         end
       end
 
