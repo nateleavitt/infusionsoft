@@ -98,7 +98,7 @@ features.
 ## <a name="rubies">Supported Rubies</a>
 This library aims to support the following Ruby implementations:
 
-* Ruby >= 2.0
+* Ruby >= 2.3.8
 * [JRuby](http://www.jruby.org/)
 * [Rubinius](http://rubini.us/)
 * [Ruby Enterprise Edition](http://www.rubyenterpriseedition.com/)
@@ -122,7 +122,7 @@ time of a major release, support for that Ruby version may be dropped.
 * Need to add a history log for additional contributers
 
 ## <a name="copyright">Copyright</a>
-Copyright (c) 2017 Nathan Leavitt
+Copyright (c) 2019 Nathan Leavitt
 
-See [LICENSE](https://github.com/nateleavitt/infusionsoft/blob/master/LICENSE.md) for details.
+See [MIT LICENSE](https://github.com/nateleavitt/infusionsoft/blob/master/LICENSE.md) for details.
 

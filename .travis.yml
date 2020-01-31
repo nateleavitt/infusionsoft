@@ -1,8 +1,7 @@
 language: ruby
 rvm:
-  - 2.0.0
-  - 2.1.5
-  - 2.2.2
-  - 2.3.4
-  # - 2.4.1 need to do more testing
+  - 2.3.8
+  - 2.4.5
+  - 2.5.3
+  - 2.6.1
   - jruby-20mode # JRuby in 2.0 mode
