@@ -21,6 +21,11 @@ module Infusionsoft
       request(:put, path, token, query, payload)
     end
 
+    # Perform an HTTP PATCH request
+    def patch(path, token, query: {}, payload: {})
+      request(:patch, path, token, query, payload)
+    end
+
     # Perform an HTTP DELETE request
     def delete(path, token, query: {})
       request(:delete, path, token, query)
@@ -47,7 +52,7 @@ module Infusionsoft
     rescue RestClient::ExceptionWithResponse => err
       # log error?
     else
-      return JSON.parse(resp.body)
+      return JSON.parse(resp.body) if resp.body # Some calls respond w nothing
     end
   end
 end
