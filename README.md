@@ -6,7 +6,8 @@
 A Ruby wrapper for the Infusionsoft API
 
 **update notes**
-* upcoming - Adding support for rest api
+* v1.3.6 - Ruby v3 compatibility
+* v1.3.5 - Rest API is now supported (documentation incoming)
 * v1.2.2 - Catching Infusionsoft API SSL handshake issues
 * v1.2.1 - Added OAuth support
 * v1.2.0 - Added `invoice_add_subscription` call to mirror Infusionsoft API parameters to eventually replace `invoice_add_recurring_order`
@@ -37,7 +38,7 @@ end
 ```
 ## OAUTH 2.0
 
-You will need to handle and obtain the access_token on your own. 
+You will need to handle and obtain the access_token on your own.
 
 ```ruby
 # You will need to attain the access_token first, then do the config like so:

@@ -15,9 +15,9 @@ module Infusionsoft
     end
 
     # Delegate to ApiInfusionsoft::Client
-    def method_missing(method, *args, &block)
+    def method_missing(method, *args, **kwargs, &block)
       return super unless new.respond_to?(method)
-      new.send(method, *args, &block)
+      new.send(method, *args, **kwargs, &block)
     end
 
     def respond_to?(method, include_private = false)
