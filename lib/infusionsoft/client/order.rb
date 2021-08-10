@@ -31,10 +31,9 @@ module Infusionsoft
       #   invoice that were created and the status of a credit card charge
       #   (if applicable).
       #   {'Successful' => [Boolean], 'Message' => [String], 'RefNum' => [String], 'OrderId' => [String], 'InvoiceId' => [String], 'Code' => [String]}
-      def order_create_order(contact_id, card_id, plan_id, product_ids, subscription_ids, process_specials, promo_codes, lead_affiliate_id, sale_affiliate_id)
+      def place_order(contact_id, card_id, plan_id, product_ids, subscription_ids, process_specials, promo_codes, lead_affiliate_id, sale_affiliate_id)
         response = xmlrpc('OrderService.placeOrder', contact_id, card_id, plan_id, product_ids, subscription_ids, process_specials, promo_codes, lead_affiliate_id, sale_affiliate_id)
       end
-      alias_method :place_order, :order_create_order
     end
   end
 end
