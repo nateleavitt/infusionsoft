@@ -8,6 +8,7 @@ module Infusionsoft
     # Client-namespaced.
     require 'infusionsoft/client/contact'
     require 'infusionsoft/client/email'
+    require 'infusionsoft/client/order'
     require 'infusionsoft/client/invoice'
     require 'infusionsoft/client/data'
     require 'infusionsoft/client/affiliate'
@@ -19,6 +20,7 @@ module Infusionsoft
 
     include Infusionsoft::Client::Contact
     include Infusionsoft::Client::Email
+    include Infusionsoft::Client::Order
     include Infusionsoft::Client::Invoice
     include Infusionsoft::Client::Data
     include Infusionsoft::Client::Affiliate
