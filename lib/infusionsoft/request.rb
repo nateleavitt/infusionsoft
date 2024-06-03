@@ -44,7 +44,7 @@ module Infusionsoft
       }
       opts = {
         method: method,
-        url: "https://api.infusionsoft.com/crm/rest/v1" + path,
+        url: "https://api-intg.infusiontest.com/crm/rest/v1" + path,
         headers: header
       }
       opts.merge!( { payload: payload.to_json }) unless payload.empty?
