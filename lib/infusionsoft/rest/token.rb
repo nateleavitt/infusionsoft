@@ -31,7 +31,7 @@ module Infusionsoft
             response_type: 'code'
           }
 
-          uri = URI::HTTPS.build({host: "signin.infusionsoft.com", path: "/app/oauth/authorize", query: URI.encode_www_form(params)})
+          uri = URI::HTTPS.build({host: "signin-intg.infusiontest.com", path: "/app/oauth/authorize", query: URI.encode_www_form(params)})
           uri.to_s
         end
 
@@ -43,7 +43,7 @@ module Infusionsoft
 
           header = { "Authorization": "Basic " + Base64.urlsafe_encode64("#{client_id}:#{client_secret}")}
 
-          response = RestClient.post("https://api.infusionsoft.com/token", params, header)
+          response = RestClient.post("https://api-intg.infusiontest.com/token", params, header)
 
         rescue RestClient::ExceptionWithResponse => e
           #TODO what to do here?
@@ -62,7 +62,7 @@ module Infusionsoft
             grant_type: 'authorization_code',
           }
 
-          response = RestClient.post("https://api.infusionsoft.com/token", params)
+          response = RestClient.post("https://api-intg.infusiontest.com/token", params)
         rescue RestClient::ExceptionWithResponse => e
           # TODO: what to do here
           false
