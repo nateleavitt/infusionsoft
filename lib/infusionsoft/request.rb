@@ -53,6 +53,7 @@ module Infusionsoft
       end
 
       opts.merge!( { payload: payload.to_json }) unless payload.empty?
+      puts "OPTS: #{opts.inspect}"
       resp = RestClient::Request.execute(opts)
       return JSON.parse(resp.body) if resp.body # Some calls respond w nothing
     rescue RestClient::ExceptionWithResponse => err
