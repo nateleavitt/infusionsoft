@@ -27,7 +27,7 @@ module Infusionsoft
     end
 
     # Perform an HTTP DELETE request
-    def delete(path, token, query: {}, version: 'v1')
+    def delete(path, token, query: {}, params: {}, version: 'v1')
       request(:delete, path, token, query, version)
     end
 
