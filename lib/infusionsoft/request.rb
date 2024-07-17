@@ -9,7 +9,7 @@ module Infusionsoft
 
     # Perform an GET request
     def get(path, token, query: {}, version: 'v1')
-      request(:get, path, token, query: query, version)
+      request(:get, path, token, query, version)
     end
 
     def post(path, token, query: {}, payload: {}, version: 'v1')
