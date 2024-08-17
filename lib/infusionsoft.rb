@@ -1,6 +1,4 @@
 
-puts "Loading Infusionsoft from: #{__FILE__}"
-
 require 'infusionsoft/api'
 require 'infusionsoft/client'
 require 'infusionsoft/configuration'
