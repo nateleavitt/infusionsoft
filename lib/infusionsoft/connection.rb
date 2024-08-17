@@ -19,8 +19,6 @@ module Infusionsoft
       else
         path = "/api/xmlrpc"
       end
-
-      #path = use_oauth ? "/crm/xmlrpc/v1?access_token=#{api_key}" : "/api/xmlrpc"
       
       client = XMLRPC::Client.new3({
         'host' => api_url,
@@ -28,7 +26,9 @@ module Infusionsoft
         'port' => 443,
         'use_ssl' => true
       })
+      
       client.http_header_extra = headers
+      
       begin
         api_logger.info "CALL: #{service_call} api_url: #{api_url} at:#{Time.now} args:#{args.inspect}"
         result = client.call("#{service_call}", api_key, *args)
