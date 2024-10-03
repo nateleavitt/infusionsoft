@@ -7,6 +7,7 @@ module Infusionsoft
     VALID_OPTION_KEYS = [
       :api_url,
       :api_key,
+      :api_token,
       :api_logger,
       :use_oauth,
       :user_agent # allows you to change the User-Agent of the request headers
@@ -47,6 +48,10 @@ module Infusionsoft
 
     def api_logger
       @api_logger || Infusionsoft::APILogger.new
+    end
+
+    def api_key
+      @api_key || 'na'
     end
   end
 
