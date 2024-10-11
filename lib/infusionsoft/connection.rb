@@ -6,18 +6,18 @@ module Infusionsoft
     private
 
     def connection(service_call, *args)
-      path = use_oauth ? "/crm/xmlrpc/v1?access_token=#{api_key}" : "/api/xmlrpc"
-      
+      path = use_oauth ? "/crm/xmlrpc/v1?access_token=#{api_key}" : "/crm/xmlrpc/v1"
+
       client = XMLRPC::Client.new3({
         'host' => api_url,
         'path' => path,
         'port' => 443,
         'use_ssl' => true
       })
-      client.http_header_extra = {'User-Agent' => user_agent}
+      client.http_header_extra = {'User-Agent' => user_agent, 'Authorization' => "Bearer #{api_key}"}
       begin
         api_logger.info "CALL: #{service_call} api_url: #{api_url} at:#{Time.now} args:#{args.inspect}"
-        result = client.call("#{service_call}", api_key, *args)
+        result = client.call("#{service_call}", *args)
         if result.nil?; ok_to_retry('nil response') end
       rescue Timeout::Error => timeout
         # Retry up to 5 times on a Timeout before raising it
