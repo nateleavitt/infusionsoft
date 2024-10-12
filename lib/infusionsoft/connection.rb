@@ -6,16 +6,17 @@ module Infusionsoft
     private
 
     def connection(service_call, *args)
-      path = use_oauth ? "/crm/xmlrpc/v1?access_token=#{api_key}" : "/crm/xmlrpc/v1"
-
       client = XMLRPC::Client.new3({
         'host' => api_url,
-        'path' => path,
+        'path' => '/crm/xmlrpc/v1',
         'port' => 443,
         'use_ssl' => true
       })
-      client.http_header_extra = {'User-Agent' => user_agent, 'Authorization' => "Bearer #{api_key}"}
+      client.http_header_extra = define_headers
+
       begin
+        # Fill the api_key param and doesn't send real api_key if is present - Avoid error https://github.com/nateleavitt/infusionsoft/pull/85#issuecomment-2404189445
+        args.insert(0, '')
         api_logger.info "CALL: #{service_call} api_url: #{api_url} at:#{Time.now} args:#{args.inspect}"
         result = client.call("#{service_call}", *args)
         if result.nil?; ok_to_retry('nil response') end
@@ -44,5 +45,18 @@ module Infusionsoft
       end
     end
 
+    def define_headers
+      headers = { 'User-Agent' => user_agent }
+    
+      if use_oauth
+        headers['Authorization'] = "Bearer #{api_key}"
+      elsif sak_key
+        headers['Authorization'] = "Bearer #{sak_key}"
+      else
+        headers['X-Keap-API-Key'] = api_key
+      end
+
+      headers
+    end
   end
 end
