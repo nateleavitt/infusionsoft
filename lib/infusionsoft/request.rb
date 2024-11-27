@@ -42,6 +42,8 @@ module Infusionsoft
         accept: :json,
         params: query
       }
+      header.merge!({ 'X-Keap-API-Key': token.access_token }) if version == 'v2'
+
       opts = {
         method: method,
         url: "https://api.infusionsoft.com/crm/rest/#{version}" + path,
