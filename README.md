@@ -29,10 +29,23 @@ A Ruby wrapper for the Infusionsoft API
 2. Enable the API on your Infusionsoft account (if you haven't already) and generate your API Key: [See Infusionsoft Doc](https://classic-infusionsoft.knowledgeowl.com/help/api-key)
 3. Then create an initializer in `config\initializers` called infusionsoft.rb and the following
 
+## Service Account Key (SAK)
+
 ```ruby
 # Added to your config\initializers file
 Infusionsoft.configure do |config|
-  config.api_url = 'YOUR_INFUSIONSOFT_URL' # example infused.infusionsoft.com DO NOT INCLUDE https://
+  config.api_url = 'api.infusionsoft.com' # do not include https://
+  config.sak_key = 'YOUR_INFUSIONSOFT_SAK_KEY' # See: https://developer.infusionsoft.com/pat-and-sak/
+  config.api_logger = Logger.new("#{Rails.root}/log/infusionsoft_api.log") # optional logger file
+end
+```
+
+## Legacy Key (will be deprecated)
+
+```ruby
+# Added to your config\initializers file
+Infusionsoft.configure do |config|
+  config.api_url = 'api.infusionsoft.com' # do not include https://
   config.api_key = 'YOUR_INFUSIONSOFT_API_KEY'
   config.api_logger = Logger.new("#{Rails.root}/log/infusionsoft_api.log") # optional logger file
 end
