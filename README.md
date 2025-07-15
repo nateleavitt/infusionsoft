@@ -40,8 +40,9 @@ The XML-RPC API is the original Infusionsoft API. Use this for legacy integratio
 # Added to your config\initializers file
 Infusionsoft.configure do |config|
   config.api_url = 'YOUR_INFUSIONSOFT_URL' # example infused.infusionsoft.com DO NOT INCLUDE https://
-  config.api_key = 'YOUR_INFUSIONSOFT_API_KEY' # Or Oauth Access Token
+  config.api_key = 'YOUR_INFUSIONSOFT_SERVICE_KEY' # Or Oauth Access Token or Legacy Key.
   config.api_logger = Logger.new("#{Rails.root}/log/infusionsoft_api.log") # optional logger file
+  config.use_oauth = true # false if using legacy api key
 end
 ```
 
