@@ -28,19 +28,8 @@ A Ruby wrapper for the Keap API
 ## <a name="setup">Setup & Configuration</a>
 1. **Rails 2.3** - add `config.gem 'infusionsoft'` **Rails >= 3** - add `'infusionsoft'` to your `Gemfile`
 2. Enable the API on your Keap account (if you haven't already) and generate your API Key: [See Keap Doc](https://classic-infusionsoft.knowledgeowl.com/help/api-key)
-3. Then create an initializer in `config\initializers` called infusionsoft.rb and the following
 
 ```ruby
-# Added to your config\initializers file
-Infusionsoft.configure do |config|
-  config.api_url = 'YOUR_INFUSIONSOFT_URL' # example infused.infusionsoft.com DO NOT INCLUDE https://
-  config.api_key = 'YOUR_INFUSIONSOFT_API_KEY'
-  config.api_logger = Logger.new("#{Rails.root}/log/infusionsoft_api.log") # optional logger file
-end
-```
-
-## <a name="examples">Usage Examples</a>
-
 ### XML-RPC API (Legacy)
 
 The XML-RPC API is the original Infusionsoft API. Use this for legacy integrations or when you need access to older Infusionsoft features.
@@ -51,7 +40,7 @@ The XML-RPC API is the original Infusionsoft API. Use this for legacy integratio
 # Added to your config\initializers file
 Infusionsoft.configure do |config|
   config.api_url = 'YOUR_INFUSIONSOFT_URL' # example infused.infusionsoft.com DO NOT INCLUDE https://
-  config.api_key = 'YOUR_INFUSIONSOFT_API_KEY'
+  config.api_key = 'YOUR_INFUSIONSOFT_API_KEY' # Or Oauth Access Token
   config.api_logger = Logger.new("#{Rails.root}/log/infusionsoft_api.log") # optional logger file
 end
 ```
