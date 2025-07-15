@@ -1,4 +1,5 @@
 require 'rest-client'
+require 'json'
 
 module Infusionsoft
   # Incase Infusionsoft ever creates a restful API :)
@@ -53,10 +54,43 @@ module Infusionsoft
       return JSON.parse(resp.body) if resp.body # Some calls respond w nothing
     rescue RestClient::ExceptionWithResponse => err
       api_logger.error "[ERROR]: #{err}"
+      handle_rest_error(err)
     rescue => err
       # RestClient::Unauthorized & SocketError
       api_logger.error "[ERROR]: #{err}"
       raise
+    end
+
+    # Handle REST API errors by parsing the response and raising appropriate exceptions
+    def handle_rest_error(err)
+      error_body = err.response.body
+      error_data = JSON.parse(error_body) if error_body && !error_body.empty?
+
+      # Extract error details from the response
+      status_code = err.response.code
+      error_message = error_data&.dig('message') || err.message
+      error_code = error_data&.dig('code') || status_code
+
+      # Map HTTP status codes to appropriate exceptions
+      exception_class = case status_code
+      when 400
+        Infusionsoft::InvalidParameterError
+      when 401
+        Infusionsoft::FailedLoginAttemptError
+      when 403
+        Infusionsoft::NoAccessError
+      when 404
+        Infusionsoft::RecordNotFoundError
+      when 422
+        Infusionsoft::InvalidParameterError
+      else
+        Infusionsoft::UnexpectedError
+      end
+
+      raise exception_class, error_message
+    rescue JSON::ParserError
+      # If we can't parse the error response, fall back to the original error
+      raise Infusionsoft::UnexpectedError, err.message
     end
   end
 end
