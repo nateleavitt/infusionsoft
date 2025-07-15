@@ -14,7 +14,7 @@ module Infusionsoft
         'port' => 443,
         'use_ssl' => true
       })
-      client.http_header_extra = {'User-Agent' => user_agent}
+      client.http_header_extra = {'User-Agent' => user_agent, 'X-Keap-API-Key' => api_key}
       begin
         api_logger.info "CALL: #{service_call} api_url: #{api_url} at:#{Time.now} args:#{args.inspect}"
         result = client.call("#{service_call}", api_key, *args)
